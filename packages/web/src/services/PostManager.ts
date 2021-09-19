@@ -1,0 +1,56 @@
+import {IPFSHTTPClient} from 'ipfs-http-client';
+import NodeRSA from 'node-rsa';
+import {MimeHandlerRegistry, setUpMimeHandler} from '../mimehandlers/MimeHandlerRegistry';
+import {IPost} from '../types/IPost';
+import {IPostContent} from '../types/IPostContent';
+import {ISerializedPost} from '../types/ISerializedPost';
+import {ISerializedPostContent} from '../types/ISerializedPostContent';
+
+export class PostManager {
+	private ipfs: IPFSHTTPClient;
+	private key: NodeRSA;
+	private handler: MimeHandlerRegistry;
+
+	constructor(ipfs: IPFSHTTPClient, key: NodeRSA) {
+		this.ipfs = ipfs;
+		this.key = key;
+		this.handler = setUpMimeHandler();
+	}
+
+	public serialize(post: IPost): Promise<ISerializedPost> {
+		return new Promise((resolve, reject) => {
+			Promise.all(post.content.map(c => this.handler.write(c.data, c.mime).then(d => this.ipfs.add(d)).then(r => ({
+				...c,
+				data: r.cid.toString(),
+			} as ISerializedPostContent))))
+				.then(content => {
+					const unsignedPost = {
+						...post,
+						from: this.key.exportKey('public'),
+						content: content,
+					};
+					return {
+						...unsignedPost,
+						sig: this.key.sign(JSON.stringify(unsignedPost.content)).toString('base64'),
+					} as ISerializedPost;
+				})
+				.then(resolve)
+				.catch(reject);
+		});
+	}
+
+	public deserialize(post: ISerializedPost): Promise<IPost> {
+		return new Promise((resolve, reject) => {
+			const key = new NodeRSA();
+			key.importKey(post.from, 'public');
+			if (key.verify(JSON.stringify(post.content), Buffer.from(post.sig, 'base64'))) {
+				resolve({
+					from: post.from,
+					content: post.content as IPostContent[]
+				} as IPost)
+			} else {
+				reject('Invalid signature');
+			}
+		});
+	}
+}
