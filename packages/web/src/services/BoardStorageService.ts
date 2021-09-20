@@ -1,9 +1,9 @@
-import {IPost} from '@undyingwraith/ipsm-core';
+import {IBoardService, IPost} from '@undyingwraith/ipsm-core';
 import {sha1} from 'crypto-hash';
 import {IPFSHTTPClient} from 'ipfs-http-client';
 import {concat} from 'uint8arrays';
 
-export class BoardStorageService {
+export class BoardStorageService implements IBoardService {
 	constructor(private ipfs: IPFSHTTPClient) {
 	}
 

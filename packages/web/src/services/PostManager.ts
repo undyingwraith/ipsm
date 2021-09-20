@@ -1,7 +1,13 @@
-import {IPost, IPostContent, ISerializedPost, ISerializedPostContent} from '@undyingwraith/ipsm-core';
+import {
+	IPost,
+	IPostContent,
+	ISerializedPost,
+	ISerializedPostContent,
+	MimeHandlerRegistry,
+} from '@undyingwraith/ipsm-core';
 import {IPFSHTTPClient} from 'ipfs-http-client';
 import NodeRSA from 'node-rsa';
-import {MimeHandlerRegistry, setUpMimeHandler} from '../mimehandlers/MimeHandlerRegistry';
+import {setUpMimeHandler} from '../hooks/setUpMimehandler';
 
 export class PostManager {
 	private ipfs: IPFSHTTPClient;
@@ -21,12 +27,12 @@ export class PostManager {
 				data: r.cid.toString(),
 			} as ISerializedPostContent))))
 				.then(content => {
-					const ts = Date.now()
+					const ts = Date.now();
 					const unsignedPost = {
 						...post,
 						from: this.key.exportKey('public'),
 						content: content,
-						ts: ts
+						ts: ts,
 					};
 					return {
 						...unsignedPost,
@@ -47,8 +53,8 @@ export class PostManager {
 					from: post.from,
 					content: post.content as IPostContent[],
 					ts: post.ts,
-					sig: post.sig
-				} as IPost)
+					sig: post.sig,
+				} as IPost);
 			} else {
 				reject('Invalid signature');
 			}
