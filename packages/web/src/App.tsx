@@ -1,8 +1,10 @@
 import {
 	AppBar,
 	Autocomplete,
-	Avatar, Box,
-	Button, CircularProgress,
+	Avatar,
+	Box,
+	Button,
+	CircularProgress,
 	Container,
 	Grid,
 	IconButton,
@@ -14,12 +16,12 @@ import {
 	Typography,
 } from '@mui/material';
 import {green} from '@mui/material/colors';
+import {IPost} from '@undyingwraith/ipsm-core';
 import React, {useEffect, useState} from 'react';
 import {Post} from './components/Post';
 import {useBoards} from './hooks/useBoards';
 import {useIpfs} from './hooks/useIpfs';
 import {PostSerializer} from './services/PostSerializer';
-import {IPost} from './types/IPost';
 
 function App() {
 	const [message, setMessage] = useState('');

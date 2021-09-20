@@ -1,4 +1,4 @@
-import {ISerializedPost} from '../types/ISerializedPost';
+import {ISerializedPost} from '@undyingwraith/ipsm-core';
 
 export class PostSerializer {
 	public static serialize(post: ISerializedPost): Uint8Array {

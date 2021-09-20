@@ -1,6 +1,5 @@
+import {IPost, IPostContent} from '@undyingwraith/ipsm-core';
 import {useState} from 'react';
-import {IPost} from '../types/IPost';
-import {IPostContent} from '../types/IPostContent';
 import {ContentForm} from './ContentForm';
 
 export interface PostFormProps {

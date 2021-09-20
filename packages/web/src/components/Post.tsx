@@ -1,8 +1,8 @@
 import {Avatar, Card, CardContent, CardHeader} from '@mui/material';
-import {useAsyncMemo} from 'use-async-memo';
-import {IPost} from '../types/IPost';
-import {PostContent} from './PostContent';
+import {IPost} from '@undyingwraith/ipsm-core';
 import {sha1} from 'crypto-hash';
+import {useAsyncMemo} from 'use-async-memo';
+import {PostContent} from './PostContent';
 
 export interface PostProps {
 	data: IPost;
