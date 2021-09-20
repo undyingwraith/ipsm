@@ -24,14 +24,16 @@ export class PostManager {
 				data: r.cid.toString(),
 			} as ISerializedPostContent))))
 				.then(content => {
+					const ts = Date.now()
 					const unsignedPost = {
 						...post,
 						from: this.key.exportKey('public'),
 						content: content,
+						ts: ts
 					};
 					return {
 						...unsignedPost,
-						sig: this.key.sign(JSON.stringify(unsignedPost.content)).toString('base64'),
+						sig: this.key.sign(ts + JSON.stringify(unsignedPost.content)).toString('base64'),
 					} as ISerializedPost;
 				})
 				.then(resolve)
@@ -43,10 +45,12 @@ export class PostManager {
 		return new Promise((resolve, reject) => {
 			const key = new NodeRSA();
 			key.importKey(post.from, 'public');
-			if (key.verify(JSON.stringify(post.content), Buffer.from(post.sig, 'base64'))) {
+			if (key.verify(post.ts + JSON.stringify(post.content), Buffer.from(post.sig, 'base64'))) {
 				resolve({
 					from: post.from,
-					content: post.content as IPostContent[]
+					content: post.content as IPostContent[],
+					ts: post.ts,
+					sig: post.sig
 				} as IPost)
 			} else {
 				reject('Invalid signature');

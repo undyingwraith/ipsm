@@ -20,11 +20,10 @@ export const Post = (props: PostProps) => {
 				</Avatar>
 			}
 			title={sender}
+			subheader={props.data.ts}
 		/>
-		<CardContent>
-			{props.data.content.map((c, k) => <div key={k}>
-				<PostContent data={c}/>
-			</div>)}
-		</CardContent>
+		{props.data.content.map((c, k) => <CardContent key={k}>
+			<PostContent data={c}/>
+		</CardContent>)}
 	</Card>;
 };

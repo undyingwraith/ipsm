@@ -13,4 +13,8 @@ export interface ISerializedPost {
 	 * Content of the post
 	 */
 	content: ISerializedPostContent[]
+	/**
+	 * Timestamp of post
+	 */
+	ts: number
 }

@@ -1,12 +1,12 @@
 import {create, IPFSHTTPClient} from 'ipfs-http-client';
 import NodeRSA from 'node-rsa';
 import {useMemo} from 'react';
-import {useAsyncMemo} from 'use-async-memo';
-import {v4 as uuid} from 'uuid';
+import {BoardStorageService} from '../services/BoardStorageService';
+// import {v4 as uuid} from 'uuid';
 import {PostManager} from '../services/PostManager';
 
-export const useIpfs = (): [IPFSHTTPClient, PostManager | undefined] => {
-	const keyPass = useMemo(() => uuid(), [])
+export const useIpfs = (): [IPFSHTTPClient, PostManager | undefined, BoardStorageService| undefined] => {
+	// const keyPass = useMemo(() => uuid(), [])
 
 	const ipfs = useMemo(() => {
 		return create({
@@ -31,13 +31,9 @@ export const useIpfs = (): [IPFSHTTPClient, PostManager | undefined] => {
 		return ipfs && key ? new PostManager(ipfs, key) : undefined
 	}, [ipfs, key])
 
-	const pubsub = useAsyncMemo(async () => {
-		if(ipfs) {
-			// return Libp2p.create({
-			//
-			// })
-		}
+	const boardService = useMemo(() => {
+		return ipfs ? new BoardStorageService(ipfs) : undefined
 	}, [ipfs])
 
-	return [ipfs, postManager]
+	return [ipfs, postManager, boardService]
 }

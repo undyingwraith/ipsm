@@ -9,4 +9,10 @@ export interface IPost {
 	 * Content of the post
 	 */
 	content: IPostContent[]
+	/**
+	 * Timestamp of post
+	 */
+	ts?: number
+
+	sig?: string
 }
