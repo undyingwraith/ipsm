@@ -1,20 +1,23 @@
 import {
 	AppBar,
-	Autocomplete, Avatar,
-	Button,
-	ButtonGroup,
+	Autocomplete,
+	Avatar, Box,
+	Button, CircularProgress,
 	Container,
-	Grid, IconButton, Menu, MenuItem,
+	Grid,
+	IconButton,
+	Menu,
+	MenuItem,
 	Paper,
 	TextField,
 	Toolbar,
 	Typography,
 } from '@mui/material';
+import {green} from '@mui/material/colors';
 import React, {useEffect, useState} from 'react';
 import {Post} from './components/Post';
 import {useBoards} from './hooks/useBoards';
 import {useIpfs} from './hooks/useIpfs';
-import {BoardStorageService} from './services/BoardStorageService';
 import {PostSerializer} from './services/PostSerializer';
 import {IPost} from './types/IPost';
 
@@ -23,6 +26,7 @@ function App() {
 	const [board, setBoard] = useState<string | null>(null);
 	const [posts, setPosts] = useState<IPost[]>([]);
 	const [ipfs, manager, boardService] = useIpfs();
+	const [loading, setLoading] = useState(false);
 
 	const post = (post: IPost) => {
 		if (!manager) return Promise.reject('too soon');
@@ -95,9 +99,11 @@ function App() {
 
 	const loadMore = () => {
 		if (ipfs && board && boardService) {
+			setLoading(true);
 			boardService.getPosts(board, posts.length)
 				.then(posts => {
 					setPosts(p => ([...p, ...posts]));
+					setLoading(false);
 				});
 		}
 	};
@@ -169,9 +175,30 @@ function App() {
                     <Button onClick={postMessage}>Post</Button>
                 </Paper>}
 				<Grid container spacing={3}>
-					{posts.map((p, i) => <Grid item key={i}><Post data={p}/></Grid>)}
+					{posts.map((p, i) => <Grid item key={i} lg={6} xs={12}><Post data={p}/></Grid>)}
 				</Grid>
-				<Button onClick={loadMore}>Load more</Button>
+				<Box sx={{m: 1, position: 'relative'}}>
+					<Button
+						onClick={loadMore}
+						style={{
+							margin: '0 auto',
+							display: 'block',
+						}}
+					>Load more</Button>
+					{loading && (
+						<CircularProgress
+							size={24}
+							sx={{
+								color: green[500],
+								position: 'absolute',
+								top: '50%',
+								left: '50%',
+								marginTop: '-12px',
+								marginLeft: '-12px',
+							}}
+						/>
+					)}
+				</Box>
 			</main>
 		</Container>
 	);
