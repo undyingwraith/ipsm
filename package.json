@@ -1,10 +1,12 @@
 {
   "name": "root",
   "private": true,
-  "scripts":{
-    "build": "lerna run build"
+  "scripts": {
+    "build": "lerna run build",
+    "web": "concurrently \"lerna run watch\" \"cd packages/web && yarn start\""
   },
   "devDependencies": {
+    "concurrently": "^6.2.1",
     "lerna": "^4.0.0"
   }
 }

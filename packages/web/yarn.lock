@@ -2551,6 +2551,13 @@
     "@typescript-eslint/types" "4.31.1"
     eslint-visitor-keys "^2.0.0"
 
+"@undyingwraith/ipsm-core@^0.1.0":
+  version "0.1.0"
+  resolved "https://npm.pkg.github.com/download/@undyingwraith/ipsm-core/0.1.0/7773a727a11e6aece7b3bb9a6a7a11278393503f0110d8a98c8216f690d91508#a71eb73d684a6dc3f1e05112f0dd6136ec68309e"
+  integrity sha512-kq+BSvqZJr/3FBkKPNmdXnX2OTtep+mWfjFlffUfubljnonaSviMBNVWa44zBZQqM36TShcV4O3+6WZC1r7Jrw==
+  dependencies:
+    ipfs-http-client "^52.0.5"
+
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.9.0.tgz#bd850604b4042459a5a41cd7d338cbed695ed964"

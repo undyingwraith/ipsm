@@ -1,6 +1,5 @@
 import {DefaultHandler} from './DefaultHandler';
 import {IMimeHandler} from './IMimeHandler';
-import {TextHandler} from './TextHandler';
 
 export class MimeHandlerRegistry {
 	private handlers: IMimeHandler[] = [];
@@ -22,10 +21,3 @@ export class MimeHandlerRegistry {
 		return handler ?? new DefaultHandler()
 	}
 }
-
-export const setUpMimeHandler = () => {
-	const h = new MimeHandlerRegistry();
-	h.register(new TextHandler());
-
-	return h;
-};
