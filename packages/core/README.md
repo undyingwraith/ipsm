@@ -4,7 +4,7 @@ This is the core libary for ipsm.
 
 ## Usage
 
-Add the following line to your `.npmrc` file in your project or creat it.
+Add the following line to your `.npmrc` file in your project or create it.
 ```text
 @undyingwraith:registry=https://npm.pkg.github.com
 ```
