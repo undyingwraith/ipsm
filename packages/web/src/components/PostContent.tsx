@@ -13,20 +13,31 @@ export const PostContent = (props: PostContentProps) => {
 	const {data} = props;
 	const [ipfs] = useIpfs();
 
+	const readFile = async (cid: CID): Promise<string> => {
+		const chunks = [];
+
+		for await (const chunk of ipfs.cat(cid)) {
+			chunks.push(chunk);
+		}
+
+		return new TextDecoder().decode(concat(chunks));
+	};
+
 	const content = useAsyncMemo(async () => {
+		const cid = CID.parse(data.data);
 		switch (data.mime) {
+			case 'text/html':
+				return <div dangerouslySetInnerHTML={{__html: await readFile(cid)}}/>;
 			case 'text/plain':
-				const chunks = [];
-
-				for await (const chunk of ipfs.cat(CID.parse(data.data))) {
-					chunks.push(chunk);
-				}
-
-				return <p>{new TextDecoder().decode(concat(chunks))}</p>;
+				return <p>{await readFile(cid)}</p>;
+			case 'image/jpg':
+			case 'image/png':
+			case 'image/webp':
+				return <img src={`https://ipfs.io/ipfs/${cid.toString()}`} alt={cid.toString()}/>;
 			default:
-				return <p><i>Encountered unknown mime type</i>: {data.mime}</p>
+				return <p><i>Encountered unknown mime type</i>: {data.mime}</p>;
 		}
 	}, [data]);
 
-	return content ?? <LinearProgress color="secondary"/>
+	return content ?? <LinearProgress color="secondary"/>;
 };
