@@ -1,15 +1,19 @@
 import {IPFSHTTPClient} from 'ipfs-http-client';
 import NodeRSA from 'node-rsa';
-import {IPost, IPostContent, ISerializedPost, ISerializedPostContent} from '../types';
-import {MimeHandlerRegistry} from './mimehandler';
+import {IPost, IPostContent, ISerializedPost, ISerializedPostContent} from '../../types';
+import {MimeHandlerRegistry} from '../mime';
+import {IPostManager} from './IPostManager';
 
-export class PostManager {
+export class PostManager implements IPostManager {
 	private handler: MimeHandlerRegistry;
 
 	constructor(private ipfs: IPFSHTTPClient, private key: NodeRSA) {
 		this.handler = MimeHandlerRegistry.build();
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	public serialize(post: IPost): Promise<ISerializedPost> {
 		return new Promise((resolve, reject) => {
 			Promise.all(post.content.map(c => this.handler.write(c.data, c.mime).then(d => this.ipfs.add(d)).then(r => ({
@@ -34,6 +38,9 @@ export class PostManager {
 		});
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	public deserialize(post: ISerializedPost): Promise<IPost> {
 		return new Promise((resolve, reject) => {
 			const key = new NodeRSA();

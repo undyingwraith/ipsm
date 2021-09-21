@@ -4,17 +4,17 @@ export interface ISerializedPost {
 	/**
 	 * Identity of poster (public key)
 	 */
-	from:  string
+	from: string;
 	/**
 	 * Signature of the content as a hex string
 	 */
-	sig: string
+	sig: string;
 	/**
 	 * Content of the post
 	 */
-	content: ISerializedPostContent[]
+	content: ISerializedPostContent[];
 	/**
 	 * Timestamp of post
 	 */
-	ts: number
+	ts: number;
 }
