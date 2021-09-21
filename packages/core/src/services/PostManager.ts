@@ -4,13 +4,9 @@ import {IPost, IPostContent, ISerializedPost, ISerializedPostContent} from '../t
 import {MimeHandlerRegistry} from './mimehandler';
 
 export class PostManager {
-	private ipfs: IPFSHTTPClient;
-	private key: NodeRSA;
 	private handler: MimeHandlerRegistry;
 
-	constructor(ipfs: IPFSHTTPClient, key: NodeRSA) {
-		this.ipfs = ipfs;
-		this.key = key;
+	constructor(private ipfs: IPFSHTTPClient, private key: NodeRSA) {
 		this.handler = MimeHandlerRegistry.build();
 	}
 
@@ -25,8 +21,8 @@ export class PostManager {
 					const unsignedPost = {
 						...post,
 						from: this.key.exportKey('public'),
-						content: content,
-						ts: ts,
+						content,
+						ts,
 					};
 					return {
 						...unsignedPost,
