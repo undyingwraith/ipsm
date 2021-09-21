@@ -10,13 +10,9 @@ import NodeRSA from 'node-rsa';
 import {setUpMimeHandler} from '../hooks/setUpMimehandler';
 
 export class PostManager {
-	private ipfs: IPFSHTTPClient;
-	private key: NodeRSA;
 	private handler: MimeHandlerRegistry;
 
-	constructor(ipfs: IPFSHTTPClient, key: NodeRSA) {
-		this.ipfs = ipfs;
-		this.key = key;
+	constructor(private ipfs: IPFSHTTPClient, private key: NodeRSA) {
 		this.handler = setUpMimeHandler();
 	}
 
@@ -31,8 +27,8 @@ export class PostManager {
 					const unsignedPost = {
 						...post,
 						from: this.key.exportKey('public'),
-						content: content,
-						ts: ts,
+						content,
+						ts,
 					};
 					return {
 						...unsignedPost,
