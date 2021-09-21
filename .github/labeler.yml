@@ -1,9 +1,8 @@
 "component:core":
-  - /packages/core/**/*
-  - /packages/core/*
+  - packages/core/**/*
 "component:web":
-  - /packages/web/**/*
-  - /packages/web/*
+  - packages/web/**/*
 documentation:
   - docs/**/*
-  - docs/*
+  - README.md
+  - packages/*/README.md
