@@ -1,5 +1,8 @@
-import {IMimeHandler} from './IMimeHandler';
+import {IMimeHandler} from '../IMimeHandler';
 
+/**
+ * Default mime handler that doesnt do anything
+ */
 export class DefaultHandler implements IMimeHandler {
 	canHandle(mime: string): boolean {
 		return false;

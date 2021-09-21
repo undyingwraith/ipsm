@@ -1,5 +1,8 @@
-import {IMimeHandler} from './IMimeHandler';
+import {IMimeHandler} from '../IMimeHandler';
 
+/**
+ * Mime handler for text
+ */
 export class TextHandler implements IMimeHandler {
 	read(data: Uint8Array): Promise<string> {
 		return Promise.resolve(new TextDecoder().decode(data));
