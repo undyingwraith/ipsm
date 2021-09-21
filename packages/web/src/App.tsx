@@ -21,24 +21,22 @@ import React, {useEffect, useState} from 'react';
 import {Post} from './components/Post';
 import {useBoards} from './hooks/useBoards';
 import {useIpfs} from './hooks/useIpfs';
-import {PostSerializer} from './services/PostSerializer';
+import {useIpsm} from './hooks/useIpsm';
 
 function App() {
 	const [message, setMessage] = useState('');
 	const [board, setBoard] = useState<string | null>(null);
 	const [posts, setPosts] = useState<IPost[]>([]);
-	const [ipfs, manager, boardService] = useIpfs();
+	const [ipfs, boardService] = useIpfs();
+	const ipsm = useIpsm()
 	const [loading, setLoading] = useState(false);
 
-	const post = (post: IPost) => {
-		if (!manager) return Promise.reject('too soon');
-		return manager?.serialize(post)
-			.then(PostSerializer.serialize)
-			.then(p => ipfs!.pubsub.publish(`/ipsm/${board}`, p));
+	const post = (post: IPost): Promise<void> => {
+		return board && ipsm ? ipsm.postToBoard(board, post) : Promise.reject('ipsm no ready')
 	};
 
 	const postMessage = () => {
-		if (ipfs) {
+		if (ipsm) {
 			post({
 				content: [
 					{
@@ -56,38 +54,28 @@ function App() {
 	const [boards, addBoard] = useBoards();
 
 	useEffect(() => {
-		if (ipfs) {
-			let topic = '/ipsm/-';
-			void ipfs.pubsub.subscribe(topic, (msg) => {
-				addBoard(new TextDecoder().decode(msg.data));
-			});
+		if (ipsm) {
+			void ipsm.subscribeToBoardFeed(addBoard)
 
 			return () => {
-				void ipfs.pubsub.unsubscribe(topic);
+				void ipsm.unsubFromBoardFeed();
 			};
 		}
-	}, [ipfs]);
+	}, [ipsm]);
 
 	useEffect(() => {
-		if (ipfs && board) {
+		if (ipsm && board) {
 			addBoard(board);
-			const topic = `/ipsm/${board}`;
-			const syncTopic = `/ipsm/-/${board}`;
-			void ipfs.pubsub.subscribe(topic, (msg) => {
-				const data = PostSerializer.deserialize(msg.data);
-				manager?.deserialize(data)
-					.then(post => {
-						setPosts(p => [post, ...p]);
-						boardService?.addPost(board, post);
-					})
-					.catch(console.error);
-			});
+			void ipsm.subscribeToBoard(board, (post) => {
+				setPosts(p => [post, ...p]);
+				boardService?.addPost(board, post);
+			})
 
 			return () => {
-				void ipfs.pubsub.unsubscribe(topic);
+				void ipsm.unsubFromBoard(board);
 			};
 		}
-	}, [board, ipfs]);
+	}, [board, ipsm]);
 
 	const [anchorEl, setAnchorEl] = React.useState(null);
 

@@ -2551,10 +2551,10 @@
     "@typescript-eslint/types" "4.31.1"
     eslint-visitor-keys "^2.0.0"
 
-"@undyingwraith/ipsm-core@^0.1.0":
-  version "0.1.0"
-  resolved "https://npm.pkg.github.com/download/@undyingwraith/ipsm-core/0.1.0/7773a727a11e6aece7b3bb9a6a7a11278393503f0110d8a98c8216f690d91508#a71eb73d684a6dc3f1e05112f0dd6136ec68309e"
-  integrity sha512-kq+BSvqZJr/3FBkKPNmdXnX2OTtep+mWfjFlffUfubljnonaSviMBNVWa44zBZQqM36TShcV4O3+6WZC1r7Jrw==
+"@undyingwraith/ipsm-core@^0.1.1":
+  version "0.1.1"
+  resolved "https://npm.pkg.github.com/download/@undyingwraith/ipsm-core/0.1.1/8a146ae4ed0a1b75dbd05422b7ee33b04f1595b48e4b7292026100e691df40d2#12b462d0a7fe016b6ebcf26cdc9a71ba923a6dd5"
+  integrity sha512-P6kXngbWA0DfOc+GzCyyIQ7bOH54iISUg4ryA1WlArMRrw7eYim03uzhBprNL81qNyp3xyQ/+2sicpVsWNUaXw==
   dependencies:
     ipfs-http-client "^52.0.5"
 

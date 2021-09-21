@@ -1,13 +1,7 @@
-import {
-	IPost,
-	IPostContent,
-	ISerializedPost,
-	ISerializedPostContent,
-	MimeHandlerRegistry,
-} from '@undyingwraith/ipsm-core';
 import {IPFSHTTPClient} from 'ipfs-http-client';
 import NodeRSA from 'node-rsa';
-import {setUpMimeHandler} from '../hooks/setUpMimehandler';
+import {IPost, IPostContent, ISerializedPost, ISerializedPostContent} from '../types';
+import {MimeHandlerRegistry} from './mimehandler';
 
 export class PostManager {
 	private ipfs: IPFSHTTPClient;
@@ -17,7 +11,7 @@ export class PostManager {
 	constructor(ipfs: IPFSHTTPClient, key: NodeRSA) {
 		this.ipfs = ipfs;
 		this.key = key;
-		this.handler = setUpMimeHandler();
+		this.handler = MimeHandlerRegistry.build();
 	}
 
 	public serialize(post: IPost): Promise<ISerializedPost> {

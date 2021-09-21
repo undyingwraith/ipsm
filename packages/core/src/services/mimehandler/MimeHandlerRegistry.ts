@@ -1,7 +1,9 @@
 import {DefaultHandler} from './DefaultHandler';
 import {IMimeHandler} from './IMimeHandler';
+import {IMimeHandlerRegistry} from './IMimeHandlerRegistry';
+import {TextHandler} from './TextHandler';
 
-export class MimeHandlerRegistry {
+export class MimeHandlerRegistry implements IMimeHandlerRegistry {
 	private handlers: IMimeHandler[] = [];
 
 	register(handler: IMimeHandler) {
@@ -19,5 +21,12 @@ export class MimeHandlerRegistry {
 	private findHandler(mime: string) {
 		const handler = this.handlers.find(h => h.canHandle(mime));
 		return handler ?? new DefaultHandler()
+	}
+
+	public static build() {
+		const h = new MimeHandlerRegistry();
+		h.register(new TextHandler());
+
+		return h;
 	}
 }
