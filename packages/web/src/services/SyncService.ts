@@ -57,7 +57,7 @@ export class SyncService {
 				for await (const file of this.ipfs.files.ls(this.board.getBoardFolder(item.board))) {
 					existing.push(file);
 				}
-			} catch(e) {
+			} catch (e) {
 				// folder doesnt exist yet
 			}
 
