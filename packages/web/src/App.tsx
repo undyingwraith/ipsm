@@ -28,11 +28,11 @@ function App() {
 	const [board, setBoard] = useState<string | null>(null);
 	const [posts, setPosts] = useState<IPost[]>([]);
 	const [ipfs, boardService] = useIpfs();
-	const ipsm = useIpsm()
+	const ipsm = useIpsm();
 	const [loading, setLoading] = useState(false);
 
 	const post = (post: IPost): Promise<void> => {
-		return board && ipsm ? ipsm.postToBoard(board, post) : Promise.reject('ipsm no ready')
+		return board && ipsm ? ipsm.postToBoard(board, post) : Promise.reject('ipsm no ready');
 	};
 
 	const postMessage = () => {
@@ -55,7 +55,7 @@ function App() {
 
 	useEffect(() => {
 		if (ipsm) {
-			void ipsm.subscribeToBoardFeed(addBoard)
+			void ipsm.subscribeToBoardFeed(addBoard);
 
 			return () => {
 				void ipsm.unsubFromBoardFeed();
@@ -69,7 +69,7 @@ function App() {
 			void ipsm.subscribeToBoard(board, (post) => {
 				setPosts(p => [post, ...p]);
 				boardService?.addPost(board, post);
-			})
+			});
 
 			return () => {
 				void ipsm.unsubFromBoard(board);

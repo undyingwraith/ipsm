@@ -1,9 +1,9 @@
-import {IBoardService, IPost} from '@undyingwraith/ipsm-core';
+import {IPost} from '@undyingwraith/ipsm-core';
 import {sha1} from 'crypto-hash';
 import {IPFSHTTPClient} from 'ipfs-http-client';
 import {concat} from 'uint8arrays';
 
-export class BoardStorageService implements IBoardService {
+export class BoardStorageService {
 	constructor(private ipfs: IPFSHTTPClient) {
 	}
 
@@ -18,30 +18,24 @@ export class BoardStorageService implements IBoardService {
 	}
 
 	public async getPosts(board: string, skip = 0, take = 12) {
-		let posts: IPost[] = [];
-		let i = 0;
 		try {
 			const controller = new AbortController();
+			const files: string[] = [];
 			for await (const file of this.ipfs.files.ls(`/Applications/ipsm/${board}`, {
 				signal: controller.signal,
 			})) {
-				i++;
-				if (i < skip) {
-					continue;
-				}
-				if (i >= skip + take) {
-					controller.abort();
-					break;
-				}
-
-				const post = await this.loadPost(`/Applications/ipsm/${board}/${file.name}`);
-				posts.push(post);
+				files.push(file.name);
 			}
+
+			return Promise.all(files
+				.sort((a,b) => b.localeCompare(a))
+				.slice(skip, skip + take)
+				.map(async f => await this.loadPost(`/Applications/ipsm/${board}/${f}`))
+			);
 		} catch (e) {
 			console.error(e);
 			return [];
 		}
-		return posts;
 	}
 
 	private async loadPost(path: string): Promise<IPost> {
