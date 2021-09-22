@@ -20,14 +20,12 @@ import {IPost} from '@undyingwraith/ipsm-core';
 import React, {useEffect, useState} from 'react';
 import {Post} from './components/Post';
 import {useBoards} from './hooks/useBoards';
-import {useIpfs} from './hooks/useIpfs';
 import {useIpsm} from './hooks/useIpsm';
 
 function App() {
 	const [message, setMessage] = useState('');
 	const [board, setBoard] = useState<string | null>(null);
 	const [posts, setPosts] = useState<IPost[]>([]);
-	const [ipfs, boardService] = useIpfs();
 	const ipsm = useIpsm();
 	const [loading, setLoading] = useState(false);
 
@@ -55,7 +53,10 @@ function App() {
 
 	useEffect(() => {
 		if (ipsm) {
-			void ipsm.subscribeToBoardFeed(addBoard);
+			void ipsm.subscribeToBoardFeed(board => {
+				addBoard(board);
+				void ipsm.postSync(board)
+			});
 
 			return () => {
 				void ipsm.unsubFromBoardFeed();
@@ -68,7 +69,7 @@ function App() {
 			addBoard(board);
 			void ipsm.subscribeToBoard(board, (post) => {
 				setPosts(p => [post, ...p]);
-				boardService?.addPost(board, post);
+				void ipsm.addPost(board, post);
 			});
 
 			return () => {
@@ -88,9 +89,9 @@ function App() {
 	};
 
 	const loadMore = () => {
-		if (ipfs && board && boardService) {
+		if (board && ipsm) {
 			setLoading(true);
-			boardService.getPosts(board, posts.length)
+			ipsm.getPosts(board, posts.length)
 				.then(posts => {
 					setPosts(p => ([...p, ...posts]));
 					setLoading(false);
@@ -111,16 +112,20 @@ function App() {
 						value={board}
 						onChange={(e, v) => {
 							setBoard(v);
-							if (v) {
-								boardService?.getPosts(v).then(setPosts).catch(console.error);
-								void ipfs?.pubsub.publish(`/ipsm/-`, new TextEncoder().encode(v));
+							if (v && ipsm) {
+								ipsm.getPosts(v).then(setPosts).catch(console.error);
+								ipsm.announce(v)
 							} else {
 								setPosts([]);
 							}
 						}}
 						renderInput={(params) => <TextField {...params} label="Board"/>}
 					/>
-					<Typography>Current: {board != null ? `/ipsm/${board}` : <i>none</i>}</Typography>
+					<Typography
+						sx={{ flexGrow: 1, marginLeft: 3 }}
+						variant="h6"
+						component="div"
+					>{board ?? <i>none</i>}</Typography>
 					<div>
 						<IconButton
 							size="large"
@@ -165,7 +170,7 @@ function App() {
                     <Button onClick={postMessage}>Post</Button>
                 </Paper>}
 				<Grid container spacing={3}>
-					{posts.map((p, i) => <Grid item key={i} lg={6} xs={12}><Post data={p}/></Grid>)}
+					{posts.map((p, i) => <Grid item key={i} xs={12}><Post data={p}/></Grid>)}
 				</Grid>
 				<Box sx={{m: 1, position: 'relative'}}>
 					<Button

@@ -1,9 +1,8 @@
 import {LinearProgress} from '@mui/material';
 import {IPostContent} from '@undyingwraith/ipsm-core';
 import {CID} from 'ipfs-http-client';
-import {concat} from 'uint8arrays';
 import {useAsyncMemo} from 'use-async-memo';
-import {useIpfs} from '../hooks/useIpfs';
+import {useIpsm} from '../hooks/useIpsm';
 
 export interface PostContentProps {
 	data: IPostContent;
@@ -11,25 +10,16 @@ export interface PostContentProps {
 
 export const PostContent = (props: PostContentProps) => {
 	const {data} = props;
-	const [ipfs] = useIpfs();
+	const ipsm = useIpsm();
 
-	const readFile = async (cid: CID): Promise<string> => {
-		const chunks = [];
-
-		for await (const chunk of ipfs.cat(cid)) {
-			chunks.push(chunk);
-		}
-
-		return new TextDecoder().decode(concat(chunks));
-	};
 
 	const content = useAsyncMemo(async () => {
 		const cid = CID.parse(data.data);
 		switch (data.mime) {
 			case 'text/html':
-				return <div dangerouslySetInnerHTML={{__html: await readFile(cid)}}/>;
+				return <div dangerouslySetInnerHTML={{__html: await ipsm?.readFile(cid) ?? ''}}/>;
 			case 'text/plain':
-				return <p>{await readFile(cid)}</p>;
+				return <p>{await ipsm?.readFile(cid)}</p>;
 			case 'image/jpg':
 			case 'image/png':
 			case 'image/webp':
