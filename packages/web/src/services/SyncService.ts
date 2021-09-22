@@ -65,11 +65,12 @@ export class SyncService {
 				sync.push(file);
 			}
 
-			const toSync = sync.filter(s => existing.findIndex(e => e.name === s.name));
+			const toSync = sync.filter(s => !existing.findIndex(e => e.name === s.name));
 
-			for (let item of toSync) {
-				const data = JSON.parse(await this.readFile(item.cid));
+			for (let syncItem of toSync) {
+				const data = JSON.parse(await this.readFile(syncItem.cid));
 				const post = await this.manager.deserialize(data);
+
 				await this.board.addPost(item.board, post);
 			}
 		} while (this.queue.peekFront());
