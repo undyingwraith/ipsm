@@ -28,9 +28,9 @@ export class BoardStorageService {
 			}
 
 			return Promise.all(files
-				.sort((a,b) => b.localeCompare(a))
+				.sort((a, b) => b.localeCompare(a))
 				.slice(skip, skip + take)
-				.map(async f => await this.loadPost(`/Applications/ipsm/${board}/${f}`))
+				.map(async f => await this.loadPost(`/Applications/ipsm/${board}/${f}`)),
 			);
 		} catch (e) {
 			console.error(e);
@@ -54,5 +54,9 @@ export class BoardStorageService {
 			parents: true,
 			create: true,
 		});
+	}
+
+	getBoardFolder(board: string) {
+		return `/Applications/ipsm/${board}`;
 	}
 }

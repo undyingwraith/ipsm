@@ -8,19 +8,21 @@ import {IPost} from './types';
  * Standard implementation of the IpsmApp
  */
 export class IpsmApp implements IIpsmApp {
-	private manager: IPostManager;
-	private topics: ITopicService;
-	private serializer: IPostSerializer;
-
 	/**
 	 * Initiate a new IpsmApp
 	 * @param ipfs ipfs connection to connect to
 	 * @param identity private key of the identity
+	 * @param serializer post serializer to use
+	 * @param manager post manager to use
+	 * @param topics topics service to use
 	 */
-	constructor(private ipfs: IPFSHTTPClient, private identity: NodeRSA) {
-		this.manager = new PostManager(ipfs, identity);
-		this.serializer = new PostSerializer();
-		this.topics = new TopicService();
+	constructor(
+		private ipfs: IPFSHTTPClient,
+		private identity: NodeRSA,
+		private serializer: IPostSerializer = new PostSerializer(),
+		private manager: IPostManager = new PostManager(ipfs, identity),
+		private topics: ITopicService = new TopicService(),
+	) {
 	}
 
 	/**
