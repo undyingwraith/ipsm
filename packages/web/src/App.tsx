@@ -26,8 +26,8 @@ function App() {
 	const [message, setMessage] = useState('');
 	const [board, setBoard] = useState<string | null>(null);
 	const [posts, setPosts] = useState<IPost[]>([]);
-	const ipsm = useIpsm();
 	const [loading, setLoading] = useState(false);
+	const ipsm = useIpsm();
 
 	const post = (post: IPost): Promise<void> => {
 		return board && ipsm ? ipsm.postToBoard(board, post) : Promise.reject('ipsm no ready');
@@ -114,7 +114,7 @@ function App() {
 							setBoard(v);
 							if (v && ipsm) {
 								ipsm.getPosts(v).then(setPosts).catch(console.error);
-								ipsm.announce(v)
+								void ipsm.announce(v)
 							} else {
 								setPosts([]);
 							}
