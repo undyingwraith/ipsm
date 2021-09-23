@@ -1,0 +1,44 @@
+{
+  "fd7a64be-32ea-4f5c-a25e-6ed65a88d1a4": {
+    "id": "fd7a64be-32ea-4f5c-a25e-6ed65a88d1a4",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Account",
+    "keyId": "TWVudS5BY2NvdW50"
+  },
+  "eef155fa-0be0-4d50-9103-a1794253e7c7": {
+    "id": "eef155fa-0be0-4d50-9103-a1794253e7c7",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Profile",
+    "keyId": "TWVudS5Qcm9maWxl"
+  },
+  "eb0d55b9-41e4-4428-a578-9b88c92ee561": {
+    "id": "eb0d55b9-41e4-4428-a578-9b88c92ee561",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Load More",
+    "keyId": "TG9hZE1vcmU="
+  },
+  "0214990f-0e75-4222-92ee-23493a5431f5": {
+    "id": "0214990f-0e75-4222-92ee-23493a5431f5",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Board",
+    "keyId": "Qm9hcmQ="
+  },
+  "70b45bcc-cc9e-4009-9722-e5fabf5ffda3": {
+    "id": "70b45bcc-cc9e-4009-9722-e5fabf5ffda3",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Post",
+    "keyId": "UG9zdA=="
+  },
+  "099d8d04-e066-47f1-ac99-23d59e7da524": {
+    "id": "099d8d04-e066-47f1-ac99-23d59e7da524",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Write something...",
+    "keyId": "V3JpdGVTb21ldGhpbmc="
+  }
+}

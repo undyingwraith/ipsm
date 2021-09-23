@@ -19,6 +19,7 @@ export const PostContent = (props: PostContentProps) => {
 			case 'text/html':
 				return <div dangerouslySetInnerHTML={{__html: await ipsm?.readFile(cid) ?? ''}}/>;
 			case 'text/plain':
+			case 'text/markdown':
 				return <p>{await ipsm?.readFile(cid)}</p>;
 			case 'image/jpg':
 			case 'image/png':

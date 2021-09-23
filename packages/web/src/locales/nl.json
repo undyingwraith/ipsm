@@ -1,0 +1,58 @@
+{
+  "06f46310-a17d-428a-83bb-a272a9714480": {
+    "id": "06f46310-a17d-428a-83bb-a272a9714480",
+    "isDeleted": false,
+    "lang": "nl",
+    "translation": "Profiel",
+    "fuzzy": false,
+    "keyId": "TWVudS5Qcm9maWxl"
+  },
+  "f12db196-a60a-492f-b8c0-f9b510ed5fd7": {
+    "id": "f12db196-a60a-492f-b8c0-f9b510ed5fd7",
+    "isDeleted": false,
+    "lang": "nl",
+    "translation": "Account",
+    "fuzzy": false,
+    "keyId": "TWVudS5BY2NvdW50"
+  },
+  "2f57ccc9-c2f3-4ee7-a195-8e83c466c762": {
+    "id": "2f57ccc9-c2f3-4ee7-a195-8e83c466c762",
+    "isDeleted": false,
+    "lang": "nl",
+    "translation": "Meer laden",
+    "fuzzy": false,
+    "keyId": "TG9hZE1vcmU="
+  },
+  "067e574b-a8f4-4d46-89b0-6302445115a8": {
+    "id": "067e574b-a8f4-4d46-89b0-6302445115a8",
+    "isDeleted": false,
+    "lang": "nl",
+    "translation": "Meer laden",
+    "fuzzy": true,
+    "keyId": "TG9hZE1vcmU="
+  },
+  "0834dca7-fc04-436c-be06-0549917606bf": {
+    "id": "0834dca7-fc04-436c-be06-0549917606bf",
+    "isDeleted": false,
+    "lang": "nl",
+    "translation": "Bord",
+    "fuzzy": false,
+    "keyId": "Qm9hcmQ="
+  },
+  "cc8d6be8-7726-4505-bafe-5ddff1ac0aa8": {
+    "id": "cc8d6be8-7726-4505-bafe-5ddff1ac0aa8",
+    "isDeleted": false,
+    "lang": "nl",
+    "translation": "Schrijf iets...",
+    "fuzzy": false,
+    "keyId": "V3JpdGVTb21ldGhpbmc="
+  },
+  "861e1920-bc22-4111-8c79-b0f56382a9a7": {
+    "id": "861e1920-bc22-4111-8c79-b0f56382a9a7",
+    "isDeleted": false,
+    "lang": "nl",
+    "translation": "Na",
+    "fuzzy": true,
+    "keyId": "UG9zdA=="
+  }
+}
