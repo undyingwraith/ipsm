@@ -2,6 +2,8 @@
   - packages/core/**/*
 "component:web":
   - packages/web/**/*
+"component:relay":
+  - packages/relay/**/*
 documentation:
   - docs/**/*
   - README.md
