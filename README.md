@@ -1,14 +1,18 @@
 # IPSM - Inter-Planetary Social Media
 
-## Pre-Requisites
-- [yarn](https://yarnpkg.com/)
-- An ipfs node with the api reachable on localhost:5001
+![Screenshot](./docs/Screenshot1.png)
 
-## Getting started
+IPSM is a decentralized social media network built on top of IPFS.
 
-1. Clone this repo
-3. run `yarn install` to install all dependencies
-4. run `yarn web` to start the web interface
+All you need to join is a local ipfs node with api running on port 5001.
+After that all you need to do is visit here: https://k51qzi5uqu5dj00g8grr9pby14wibhuhkgxo7gdb5ebnlem2eaeob3809qni8p.ipns.dewb.link
+
+## Alpha notice
+This project is still very young and in the alpha stages.
+Expect changes in the framework as well as protocol.
+
+## Developer quickstart
+This can be found [here](./docs/Getting_started.md)
 
 ## Common issues
 
