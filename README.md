@@ -4,8 +4,11 @@
 
 IPSM is a decentralized social media network built on top of IPFS.
 
-All you need to join is a local ipfs node with api running on port 5001.
+All you need to join is a local IPFS node with api running on localhost port 5001.
 After that all you need to do is visit here: https://k51qzi5uqu5dj00g8grr9pby14wibhuhkgxo7gdb5ebnlem2eaeob3809qni8p.ipns.dewb.link
+
+*This is an IPFS url that you can open in your browser, but it requires IPFS to be installed on your machine to get access to the IPFS API.
+[How to install IPFS](https://docs.ipfs.io)*
 
 ## Alpha notice
 This project is still very young and in the alpha stages.
