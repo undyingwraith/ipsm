@@ -1,0 +1,58 @@
+{
+  "5a402a03-618e-42de-8227-78dee4fc9387": {
+    "id": "5a402a03-618e-42de-8227-78dee4fc9387",
+    "isDeleted": false,
+    "lang": "de",
+    "translation": "Profil",
+    "fuzzy": false,
+    "keyId": "TWVudS5Qcm9maWxl"
+  },
+  "c91255e5-5b6e-4601-b231-3a00a0519e71": {
+    "id": "c91255e5-5b6e-4601-b231-3a00a0519e71",
+    "isDeleted": false,
+    "lang": "de",
+    "translation": "Konto",
+    "fuzzy": false,
+    "keyId": "TWVudS5BY2NvdW50"
+  },
+  "4796feec-7d85-40cd-8b31-ea3e5c92ad60": {
+    "id": "4796feec-7d85-40cd-8b31-ea3e5c92ad60",
+    "isDeleted": false,
+    "lang": "de",
+    "translation": "Mehr laden",
+    "fuzzy": false,
+    "keyId": "TG9hZE1vcmU="
+  },
+  "c99f2b0c-4522-4701-b397-3709c31ecc76": {
+    "id": "c99f2b0c-4522-4701-b397-3709c31ecc76",
+    "isDeleted": false,
+    "lang": "de",
+    "translation": "Mehr laden",
+    "fuzzy": true,
+    "keyId": "TG9hZE1vcmU="
+  },
+  "950211fd-c93f-4be4-b92c-79b1095f6b5b": {
+    "id": "950211fd-c93f-4be4-b92c-79b1095f6b5b",
+    "isDeleted": false,
+    "lang": "de",
+    "translation": "Planke",
+    "fuzzy": true,
+    "keyId": "Qm9hcmQ="
+  },
+  "17a934e4-c3cc-466e-922f-d996fa747b95": {
+    "id": "17a934e4-c3cc-466e-922f-d996fa747b95",
+    "isDeleted": false,
+    "lang": "de",
+    "translation": "Schreibe etwas...",
+    "fuzzy": false,
+    "keyId": "V3JpdGVTb21ldGhpbmc="
+  },
+  "20898bdf-e564-4cb8-a637-d4749e8d4e89": {
+    "id": "20898bdf-e564-4cb8-a637-d4749e8d4e89",
+    "isDeleted": false,
+    "lang": "de",
+    "translation": "Post",
+    "fuzzy": true,
+    "keyId": "UG9zdA=="
+  }
+}

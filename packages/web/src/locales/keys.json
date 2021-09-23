@@ -1,0 +1,62 @@
+{
+  "TWVudS5Qcm9maWxl": {
+    "id": "TWVudS5Qcm9maWxl",
+    "context": null,
+    "text": "Menu.Profile",
+    "firstUsed": "2021-09-23T22:46:34.321Z",
+    "unusedSince": null,
+    "sources": [
+      "src/components/MenuButton.tsx"
+    ]
+  },
+  "TWVudS5BY2NvdW50": {
+    "id": "TWVudS5BY2NvdW50",
+    "context": null,
+    "text": "Menu.Account",
+    "firstUsed": "2021-09-23T22:46:34.321Z",
+    "unusedSince": null,
+    "sources": [
+      "src/components/MenuButton.tsx"
+    ]
+  },
+  "TG9hZE1vcmU=": {
+    "id": "TG9hZE1vcmU=",
+    "context": null,
+    "text": "LoadMore",
+    "firstUsed": "2021-09-23T22:57:08.813Z",
+    "unusedSince": null,
+    "sources": [
+      "src/App.tsx"
+    ]
+  },
+  "Qm9hcmQ=": {
+    "id": "Qm9hcmQ=",
+    "context": null,
+    "text": "Board",
+    "firstUsed": "2021-09-23T22:59:10.147Z",
+    "unusedSince": null,
+    "sources": [
+      "src/components/BoardSelector.tsx"
+    ]
+  },
+  "V3JpdGVTb21ldGhpbmc=": {
+    "id": "V3JpdGVTb21ldGhpbmc=",
+    "context": null,
+    "text": "WriteSomething",
+    "firstUsed": "2021-09-23T23:02:59.104Z",
+    "unusedSince": null,
+    "sources": [
+      "src/App.tsx"
+    ]
+  },
+  "UG9zdA==": {
+    "id": "UG9zdA==",
+    "context": null,
+    "text": "Post",
+    "firstUsed": "2021-09-23T23:03:13.870Z",
+    "unusedSince": null,
+    "sources": [
+      "src/App.tsx"
+    ]
+  }
+}

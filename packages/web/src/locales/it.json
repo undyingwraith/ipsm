@@ -1,0 +1,58 @@
+{
+  "a0221004-048b-40e3-afa3-5c87b809cfa1": {
+    "id": "a0221004-048b-40e3-afa3-5c87b809cfa1",
+    "isDeleted": false,
+    "lang": "it",
+    "translation": "Profilo",
+    "fuzzy": true,
+    "keyId": "TWVudS5Qcm9maWxl"
+  },
+  "b05322bc-a7ee-4273-9d71-23a7773b448d": {
+    "id": "b05322bc-a7ee-4273-9d71-23a7773b448d",
+    "isDeleted": false,
+    "lang": "it",
+    "translation": "Account",
+    "fuzzy": true,
+    "keyId": "TWVudS5BY2NvdW50"
+  },
+  "cdc634b7-0a56-422d-85c5-824060b4dba3": {
+    "id": "cdc634b7-0a56-422d-85c5-824060b4dba3",
+    "isDeleted": false,
+    "lang": "it",
+    "translation": "Carica altro",
+    "fuzzy": true,
+    "keyId": "TG9hZE1vcmU="
+  },
+  "60e66931-a580-4dc8-82a4-a9a7fbf0d632": {
+    "id": "60e66931-a580-4dc8-82a4-a9a7fbf0d632",
+    "isDeleted": false,
+    "lang": "it",
+    "translation": "Carica altro",
+    "fuzzy": true,
+    "keyId": "TG9hZE1vcmU="
+  },
+  "634153b4-a70c-4d11-a614-8589b49ba80c": {
+    "id": "634153b4-a70c-4d11-a614-8589b49ba80c",
+    "isDeleted": false,
+    "lang": "it",
+    "translation": "Tavola",
+    "fuzzy": true,
+    "keyId": "Qm9hcmQ="
+  },
+  "844e1f36-e50c-4eb1-b9b8-d55d0a9dfe29": {
+    "id": "844e1f36-e50c-4eb1-b9b8-d55d0a9dfe29",
+    "isDeleted": false,
+    "lang": "it",
+    "translation": "Scrivi qualcosa...",
+    "fuzzy": true,
+    "keyId": "V3JpdGVTb21ldGhpbmc="
+  },
+  "917fe909-481d-4681-94a0-ca0c74a28721": {
+    "id": "917fe909-481d-4681-94a0-ca0c74a28721",
+    "isDeleted": false,
+    "lang": "it",
+    "translation": "Inviare",
+    "fuzzy": true,
+    "keyId": "UG9zdA=="
+  }
+}

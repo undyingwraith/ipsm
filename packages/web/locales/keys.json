@@ -1,0 +1,22 @@
+{
+  "TWVudS5Qcm9maWxl": {
+    "id": "TWVudS5Qcm9maWxl",
+    "context": null,
+    "text": "Menu.Profile",
+    "firstUsed": "2021-09-23T22:46:34.321Z",
+    "unusedSince": null,
+    "sources": [
+      "src/components/MenuButton.tsx"
+    ]
+  },
+  "TWVudS5BY2NvdW50": {
+    "id": "TWVudS5BY2NvdW50",
+    "context": null,
+    "text": "Menu.Account",
+    "firstUsed": "2021-09-23T22:46:34.321Z",
+    "unusedSince": null,
+    "sources": [
+      "src/components/MenuButton.tsx"
+    ]
+  }
+}

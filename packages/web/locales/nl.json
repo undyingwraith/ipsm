@@ -1,0 +1,18 @@
+{
+  "06f46310-a17d-428a-83bb-a272a9714480": {
+    "id": "06f46310-a17d-428a-83bb-a272a9714480",
+    "isDeleted": false,
+    "lang": "nl",
+    "translation": "Menu.Profiel",
+    "fuzzy": true,
+    "keyId": "TWVudS5Qcm9maWxl"
+  },
+  "f12db196-a60a-492f-b8c0-f9b510ed5fd7": {
+    "id": "f12db196-a60a-492f-b8c0-f9b510ed5fd7",
+    "isDeleted": false,
+    "lang": "nl",
+    "translation": "Menu.Account",
+    "fuzzy": true,
+    "keyId": "TWVudS5BY2NvdW50"
+  }
+}
