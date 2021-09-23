@@ -8,7 +8,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "translate": "mady"
+    "translate": "mady",
+    "deploy": "yarn build && ipfs add -rQt build | ipfs name publish -k ipsm-web"
   },
   "dependencies": {
     "@emotion/react": "^11.4.1",
