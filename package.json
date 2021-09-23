@@ -4,7 +4,8 @@
   "scripts": {
     "install": "lerna bootstrap",
     "build": "lerna run build",
-    "web": "concurrently \"lerna run watch\" \"cd packages/web && yarn start\""
+    "web": "concurrently \"lerna run watch\" \"cd packages/web && yarn start\"",
+    "relay": "concurrently \"lerna run watch\" \"cd packages/relay && yarn start\""
   },
   "devDependencies": {
     "concurrently": "^6.2.1",

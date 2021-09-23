@@ -1,0 +1,26 @@
+{
+  "name": "@undyingwraith/ipsm-relay",
+  "version": "0.1.0",
+  "description": "A relay server that will listen and sync boards for you when your device isnt connected.",
+  "main": "index.js",
+  "repository": "https://github.com/undyingwraith/ipsm",
+  "author": "Undying Wraith",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node build/cli.js"
+  },
+  "devDependencies": {
+    "@types/node-cron": "^2.0.4",
+    "@types/node-rsa": "^1.1.1",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "@undyingwraith/ipsm-core": "^0.1.5",
+    "crypto-hash": "^1.3.0",
+    "denque": "^2.0.1",
+    "ipfs-http-client": "^52.0.5",
+    "node-cron": "^3.0.0",
+    "node-rsa": "^1.1.1"
+  }
+}

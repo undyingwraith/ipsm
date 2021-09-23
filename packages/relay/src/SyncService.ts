@@ -65,10 +65,14 @@ export class SyncService {
 				for await (const file of this.ipfs.ls(item.cid)) {
 					if(file.name in existing) continue;
 
-					const data = JSON.parse(await this.readFile(file.cid));
-					const post = await this.manager.deserialize(data);
+					try {
+						const data = JSON.parse(await this.readFile(file.cid));
+						const post = await this.manager.deserialize(data);
 
-					await this.board.addPost(item.board, post);
+						await this.board.addPost(item.board, post);
+					} catch(e) {
+						//ignored we dont care
+					}
 				}
 			} while (this.queue.peekFront());
 		} finally {
