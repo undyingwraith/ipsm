@@ -40,5 +40,82 @@
     "lang": "en",
     "translation": "Write something...",
     "keyId": "V3JpdGVTb21ldGhpbmc="
+  },
+  "0b22461f-bece-4d5d-8c18-80d2f3672fd7": {
+    "id": "0b22461f-bece-4d5d-8c18-80d2f3672fd7",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Logout",
+    "keyId": "TWVudS5Mb2dvdXQ="
+  },
+  "0c988365-a6f8-4fbd-9af7-c29639901818": {
+    "id": "0c988365-a6f8-4fbd-9af7-c29639901818",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Save",
+    "keyId": "U2F2ZQ=="
+  },
+  "4dc8dc44-4cc4-450a-9210-26c5af07bd2f": {
+    "id": "4dc8dc44-4cc4-450a-9210-26c5af07bd2f",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Settings",
+    "keyId": "U2V0dGluZ3M="
+  },
+  "f8d5afa0-60ae-43af-b9ee-60d2cba70061": {
+    "id": "f8d5afa0-60ae-43af-b9ee-60d2cba70061",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Settings",
+    "keyId": "TWVudS5TZXR0aW5ncw=="
+  },
+  "4c9cca7f-b99d-490d-83c5-3c5c402b6268": {
+    "id": "4c9cca7f-b99d-490d-83c5-3c5c402b6268",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "General",
+    "keyId": "U2V0dGluZ3MuR2VuZXJhbA=="
+  },
+  "ad2bf66b-670a-47aa-a33a-27de0f5e6c53": {
+    "id": "ad2bf66b-670a-47aa-a33a-27de0f5e6c53",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "IPFS",
+    "keyId": "U2V0dGluZ3MuSXBmcw=="
+  },
+  "a94ca7e7-3e87-43cc-b5cc-6b5fcc46c6ab": {
+    "id": "a94ca7e7-3e87-43cc-b5cc-6b5fcc46c6ab",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Identity",
+    "keyId": "U2V0dGluZ3MuSWRlbnRpdHk="
+  },
+  "a47a3742-00a4-4423-aaa1-148f3c02cc98": {
+    "id": "a47a3742-00a4-4423-aaa1-148f3c02cc98",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Profile",
+    "keyId": "UHJvZmlsZQ=="
+  },
+  "520af769-54a2-4543-bd2c-557833145317": {
+    "id": "520af769-54a2-4543-bd2c-557833145317",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Export",
+    "keyId": "U2V0dGluZ3MuSWRlbnRpdHkuRXhwb3J0"
+  },
+  "dd5bd10e-2f75-47c6-bf80-410571744ebf": {
+    "id": "dd5bd10e-2f75-47c6-bf80-410571744ebf",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Import",
+    "keyId": "U2V0dGluZ3MuSWRlbnRpdHkuSW1wb3J0"
+  },
+  "0bc1d74c-d719-497a-9bb7-5c40b2de82d2": {
+    "id": "0bc1d74c-d719-497a-9bb7-5c40b2de82d2",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "IPFS Api Url",
+    "keyId": "U2V0dGluZ3MuSXBmcy5Vcmw="
   }
 }

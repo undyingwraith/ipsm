@@ -54,5 +54,93 @@
     "translation": "Post",
     "fuzzy": true,
     "keyId": "UG9zdA=="
+  },
+  "e3ecc36e-edcb-4110-91c4-eda8fa875f68": {
+    "id": "e3ecc36e-edcb-4110-91c4-eda8fa875f68",
+    "isDeleted": false,
+    "lang": "de",
+    "translation": "Abmelden",
+    "fuzzy": false,
+    "keyId": "TWVudS5Mb2dvdXQ="
+  },
+  "c3b53d96-b0b9-4eba-8115-972a3b9e6e63": {
+    "id": "c3b53d96-b0b9-4eba-8115-972a3b9e6e63",
+    "isDeleted": false,
+    "lang": "de",
+    "translation": "Einstellungen",
+    "fuzzy": false,
+    "keyId": "TWVudS5TZXR0aW5ncw=="
+  },
+  "56b44e43-2d97-4f9e-879c-f9e01db3e306": {
+    "id": "56b44e43-2d97-4f9e-879c-f9e01db3e306",
+    "isDeleted": false,
+    "lang": "de",
+    "translation": "Einstellungen",
+    "fuzzy": false,
+    "keyId": "U2V0dGluZ3M="
+  },
+  "8edea645-6f3e-4a9a-8444-9a6de8a86fa6": {
+    "id": "8edea645-6f3e-4a9a-8444-9a6de8a86fa6",
+    "isDeleted": false,
+    "lang": "de",
+    "translation": "Speichern",
+    "fuzzy": false,
+    "keyId": "U2F2ZQ=="
+  },
+  "1921a141-cae5-493a-936d-65e213bfd7eb": {
+    "id": "1921a141-cae5-493a-936d-65e213bfd7eb",
+    "isDeleted": false,
+    "lang": "de",
+    "translation": "IPFS",
+    "fuzzy": false,
+    "keyId": "U2V0dGluZ3MuSXBmcw=="
+  },
+  "64371696-d81b-40fe-8cc3-1a6c15acfb52": {
+    "id": "64371696-d81b-40fe-8cc3-1a6c15acfb52",
+    "isDeleted": false,
+    "lang": "de",
+    "translation": "Allgemein",
+    "fuzzy": false,
+    "keyId": "U2V0dGluZ3MuR2VuZXJhbA=="
+  },
+  "d370219d-14d1-44a3-b9d7-a23643851711": {
+    "id": "d370219d-14d1-44a3-b9d7-a23643851711",
+    "isDeleted": false,
+    "lang": "de",
+    "translation": "Identität",
+    "fuzzy": false,
+    "keyId": "U2V0dGluZ3MuSWRlbnRpdHk="
+  },
+  "e244c1b4-41f5-413b-9934-43f831fd0960": {
+    "id": "e244c1b4-41f5-413b-9934-43f831fd0960",
+    "isDeleted": false,
+    "lang": "de",
+    "translation": "Importieren",
+    "fuzzy": false,
+    "keyId": "U2V0dGluZ3MuSWRlbnRpdHkuSW1wb3J0"
+  },
+  "515cb5ee-b30a-45e6-bb9e-7b236cf0fd78": {
+    "id": "515cb5ee-b30a-45e6-bb9e-7b236cf0fd78",
+    "isDeleted": false,
+    "lang": "de",
+    "translation": "Profil",
+    "fuzzy": false,
+    "keyId": "UHJvZmlsZQ=="
+  },
+  "a2146a66-f357-4059-b43d-ab1cd2f4ce38": {
+    "id": "a2146a66-f357-4059-b43d-ab1cd2f4ce38",
+    "isDeleted": false,
+    "lang": "de",
+    "translation": "IPFS Api Url",
+    "fuzzy": false,
+    "keyId": "U2V0dGluZ3MuSXBmcy5Vcmw="
+  },
+  "2d5f6e63-f4d4-4ccb-ad95-f9472e49b622": {
+    "id": "2d5f6e63-f4d4-4ccb-ad95-f9472e49b622",
+    "isDeleted": false,
+    "lang": "de",
+    "translation": "Exportieren",
+    "fuzzy": false,
+    "keyId": "U2V0dGluZ3MuSWRlbnRpdHkuRXhwb3J0"
   }
 }

@@ -1,8 +1,18 @@
 {
   "Menu.Profile": "Profilo",
-  "Menu.Account": "Account",
   "LoadMore": "Carica altro",
   "Board": "Tavola",
   "WriteSomething": "Scrivi qualcosa...",
-  "Post": "Inviare"
+  "Post": "Inviare",
+  "Save": "Salva",
+  "Menu.Settings": "Impostazioni",
+  "Settings": "Impostazioni",
+  "Menu.Logout": "Logout",
+  "Settings.Identity": "Impostazioni.Identità",
+  "Settings.Ipfs": "IPFS",
+  "Settings.General": "Impostazioni.Generale",
+  "Profile": "Profilo",
+  "Settings.Ipfs.Url": "IPFS Api Url",
+  "Settings.Identity.Export": "Impostazioni.Identità.Esporta",
+  "Settings.Identity.Import": "Impostazioni.Identità.Importazione"
 }

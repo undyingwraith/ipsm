@@ -54,5 +54,93 @@
     "translation": "Na",
     "fuzzy": true,
     "keyId": "UG9zdA=="
+  },
+  "b584c7e2-b3a1-4ee2-9d1b-40c5deed7752": {
+    "id": "b584c7e2-b3a1-4ee2-9d1b-40c5deed7752",
+    "isDeleted": false,
+    "lang": "nl",
+    "translation": "Instellingen",
+    "fuzzy": true,
+    "keyId": "U2V0dGluZ3M="
+  },
+  "2252075c-52fa-4ac4-88f0-b1a378fba4ac": {
+    "id": "2252075c-52fa-4ac4-88f0-b1a378fba4ac",
+    "isDeleted": false,
+    "lang": "nl",
+    "translation": "Opslaan",
+    "fuzzy": true,
+    "keyId": "U2F2ZQ=="
+  },
+  "78f78ff8-bf89-4a5d-af09-7e36b3b2435a": {
+    "id": "78f78ff8-bf89-4a5d-af09-7e36b3b2435a",
+    "isDeleted": false,
+    "lang": "nl",
+    "translation": "Menu.Instellingen",
+    "fuzzy": true,
+    "keyId": "TWVudS5TZXR0aW5ncw=="
+  },
+  "8b905b76-ea1f-4688-895f-9c2c391a4215": {
+    "id": "8b905b76-ea1f-4688-895f-9c2c391a4215",
+    "isDeleted": false,
+    "lang": "nl",
+    "translation": "Menu.Uitloggen",
+    "fuzzy": true,
+    "keyId": "TWVudS5Mb2dvdXQ="
+  },
+  "396c047c-3a98-4719-bb2e-4e8ee4243d3d": {
+    "id": "396c047c-3a98-4719-bb2e-4e8ee4243d3d",
+    "isDeleted": false,
+    "lang": "nl",
+    "translation": "IPFS",
+    "fuzzy": false,
+    "keyId": "U2V0dGluZ3MuSXBmcw=="
+  },
+  "c26d0054-bfc8-4541-8387-85b14d427e25": {
+    "id": "c26d0054-bfc8-4541-8387-85b14d427e25",
+    "isDeleted": false,
+    "lang": "nl",
+    "translation": "Instellingen.Identiteit",
+    "fuzzy": true,
+    "keyId": "U2V0dGluZ3MuSWRlbnRpdHk="
+  },
+  "c8479845-8325-4d4b-9500-f746c14a3388": {
+    "id": "c8479845-8325-4d4b-9500-f746c14a3388",
+    "isDeleted": false,
+    "lang": "nl",
+    "translation": "Instellingen.Algemeen",
+    "fuzzy": true,
+    "keyId": "U2V0dGluZ3MuR2VuZXJhbA=="
+  },
+  "76773761-9a34-4b1f-a171-497331768a9d": {
+    "id": "76773761-9a34-4b1f-a171-497331768a9d",
+    "isDeleted": false,
+    "lang": "nl",
+    "translation": "Instellingen.Identiteit.Export",
+    "fuzzy": true,
+    "keyId": "U2V0dGluZ3MuSWRlbnRpdHkuRXhwb3J0"
+  },
+  "2cd27d2b-4dd5-487b-b4d4-01a561135140": {
+    "id": "2cd27d2b-4dd5-487b-b4d4-01a561135140",
+    "isDeleted": false,
+    "lang": "nl",
+    "translation": "Instellingen.Identiteit.Import",
+    "fuzzy": true,
+    "keyId": "U2V0dGluZ3MuSWRlbnRpdHkuSW1wb3J0"
+  },
+  "61b4cbe2-3878-4268-ab08-29592758e847": {
+    "id": "61b4cbe2-3878-4268-ab08-29592758e847",
+    "isDeleted": false,
+    "lang": "nl",
+    "translation": "Profiel",
+    "fuzzy": true,
+    "keyId": "UHJvZmlsZQ=="
+  },
+  "367c0c75-c628-40dd-b100-6bfcf8302368": {
+    "id": "367c0c75-c628-40dd-b100-6bfcf8302368",
+    "isDeleted": false,
+    "lang": "nl",
+    "translation": "IPFS Api Url",
+    "fuzzy": false,
+    "keyId": "U2V0dGluZ3MuSXBmcy5Vcmw="
   }
 }

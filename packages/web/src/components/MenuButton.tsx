@@ -1,8 +1,14 @@
-import {Avatar, IconButton, Menu, MenuItem} from '@mui/material';
+import {Avatar, Divider, IconButton, Menu, MenuItem} from '@mui/material';
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 
-export const MenuButton = () => {
+export interface MenuButtonProps {
+	onProfileClick?: () => void;
+	onSettingsClick?: () => void;
+	onLogoutClick?: () => void;
+}
+
+export const MenuButton = (props: MenuButtonProps) => {
 	const [anchorEl, setAnchorEl] = React.useState(null);
 	const [_t] = useTranslation();
 
@@ -38,8 +44,19 @@ export const MenuButton = () => {
 			open={Boolean(anchorEl)}
 			onClose={handleClose}
 		>
-			<MenuItem onClick={handleClose}>{_t('Menu.Profile')}</MenuItem>
-			<MenuItem onClick={handleClose}>{_t('Menu.Account')}</MenuItem>
+			<MenuItem onClick={() => {
+				handleClose();
+				props.onProfileClick && props.onProfileClick();
+			}}>{_t('Menu.Profile')}</MenuItem>
+			<MenuItem onClick={() => {
+				handleClose();
+				props.onSettingsClick && props.onSettingsClick();
+			}}>{_t('Menu.Settings')}</MenuItem>
+			<Divider/>
+			<MenuItem onClick={() => {
+				handleClose();
+				props.onLogoutClick && props.onLogoutClick();
+			}}>{_t('Menu.Logout')}</MenuItem>
 		</Menu>
 	</>;
 };
