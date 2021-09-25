@@ -1,8 +1,18 @@
 {
   "Menu.Profile": "Profil",
-  "Menu.Account": "Konto",
   "LoadMore": "Mehr laden",
   "Board": "Planke",
   "WriteSomething": "Schreibe etwas...",
-  "Post": "Post"
+  "Post": "Post",
+  "Menu.Logout": "Abmelden",
+  "Menu.Settings": "Einstellungen",
+  "Settings": "Einstellungen",
+  "Save": "Speichern",
+  "Settings.Ipfs": "IPFS",
+  "Settings.General": "Allgemein",
+  "Settings.Identity": "Identität",
+  "Settings.Identity.Import": "Importieren",
+  "Profile": "Profil",
+  "Settings.Ipfs.Url": "IPFS Api Url",
+  "Settings.Identity.Export": "Exportieren"
 }

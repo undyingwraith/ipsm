@@ -4,6 +4,8 @@ import {IPost} from '@undyingwraith/ipsm-core';
 import React, {useEffect, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {BoardSelector} from './components/BoardSelector';
+import {ProfileDialog} from './components/dialog/ProfileDialog';
+import {SettingsDialog} from './components/dialog/SettingsDialog';
 import {MenuButton} from './components/MenuButton';
 import {Post} from './components/Post';
 import {useBoards} from './hooks/useBoards';
@@ -14,6 +16,7 @@ function App() {
 	const [board, setBoard] = useState<string | null>(null);
 	const [posts, setPosts] = useState<IPost[]>([]);
 	const [loading, setLoading] = useState(false);
+	const [dialog, setDialog] = useState<'profile' | 'settings'>();
 	const [_t] = useTranslation();
 	const ipsm = useIpsm();
 
@@ -95,7 +98,10 @@ function App() {
 						}}
 					/>
 					<div style={{flexGrow: 1}}/>
-					<MenuButton/>
+					<MenuButton
+						onProfileClick={() => setDialog('profile')}
+						onSettingsClick={() => setDialog('settings')}
+					/>
 				</Toolbar>
 			</AppBar>
 			<main style={{marginTop: 75}}>
@@ -135,6 +141,14 @@ function App() {
 					)}
 				</Box>
 			</main>
+			<ProfileDialog
+				open={dialog === 'profile'}
+				onClose={() => setDialog(undefined)}
+			/>
+			<SettingsDialog
+				open={dialog === 'settings'}
+				onClose={() => setDialog(undefined)}
+			/>
 		</Container>
 	);
 }
