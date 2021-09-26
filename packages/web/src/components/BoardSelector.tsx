@@ -1,4 +1,4 @@
-import {Autocomplete, TextField, Typography} from '@mui/material';
+import {Autocomplete, TextField} from '@mui/material';
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 
