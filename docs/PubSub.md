@@ -1,4 +1,4 @@
-# IPMS PubSub Protocol
+# IPSM PubSub Protocol
 
 Below is a quick overview of all the different pubsub topics that IPSM uses. One doesn't have to use all of those
 topics, you can pick and choose what you want.
@@ -23,7 +23,7 @@ The post is encoded as json.
 |---|---
 |from|CID of public key encoded as DER
 |data|CID of data
-|sig|base64 encoded signature of post
+|sigs|CID of signature object
 
 #### Example
 
@@ -31,7 +31,7 @@ The post is encoded as json.
 {
   "from": "CID of public key",
   "data": "CID of payload",
-  "sig": "signature"
+  "sigs": "signature"
 }
 ```
 
@@ -43,6 +43,7 @@ The data is encoded as dag-cbor.
 
 |Property|Description|Required
 |---|---|---
+|from|CID of public key encoded as DER
 |content|array of objects with a mime & a data attribute. The data attribues value is a cid to the data, as a plain string.|**true**
 |ts|unix timestamp of post time|**true**
 |title|Title of the post (text)|*false*
@@ -54,16 +55,25 @@ The data is encoded as dag-cbor.
 
 ```js
 ipfs.dag.put({
+    from: "CID of public key",
     content: [
         {
             mime: "image/jpeg",
             data: "bafybeiafrpc6aquayjvpimpupoluvzgokrlqk6fowhw7wqb2f5gwj2tadi",
         },
     ],
-    "title": "Such a rare sight",
-    "ts": 1632428006,
+    title: "Such a rare sight",
+    ts: 1632428006,
     // optional additional attributes
-}
+})
+```
+
+### Signatures
+
+```js
+ipfs.dag.put({
+    "CID of public key": "base64 encoded signature of post"
+})
 ```
 
 ## OnOpen topic
