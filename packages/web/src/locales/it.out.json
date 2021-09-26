@@ -14,5 +14,6 @@
   "Profile": "Profilo",
   "Settings.Ipfs.Url": "IPFS Api Url",
   "Settings.Identity.Export": "Impostazioni.Identità.Esporta",
-  "Settings.Identity.Import": "Impostazioni.Identità.Importazione"
+  "Settings.Identity.Import": "Impostazioni.Identità.Importazione",
+  "Settings.General.UseBoardDiscovery": "Settings.General.UseBoardDiscovery"
 }
