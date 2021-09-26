@@ -117,5 +117,12 @@
     "lang": "en",
     "translation": "IPFS Api Url",
     "keyId": "U2V0dGluZ3MuSXBmcy5Vcmw="
+  },
+  "ec50c58b-e032-4fb8-9a08-4f43852e1ed0": {
+    "id": "ec50c58b-e032-4fb8-9a08-4f43852e1ed0",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Use board discovery",
+    "keyId": "U2V0dGluZ3MuR2VuZXJhbC5Vc2VCb2FyZERpc2NvdmVyeQ=="
   }
 }

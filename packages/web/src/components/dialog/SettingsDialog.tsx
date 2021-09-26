@@ -1,3 +1,4 @@
+import {CheckBox} from '@mui/icons-material';
 import {Box, ButtonGroup, Tab, Tabs, TextField} from '@mui/material';
 import {useState} from 'react';
 import * as React from 'react';
@@ -78,7 +79,9 @@ export const SettingsDialog = (props: SettingsDialogProps) => {
 			value={tab}
 			index={0}
 		>
-			General settings
+			<div>
+				<CheckBox/> {_t('Settings.General.UseBoardDiscovery')}
+			</div>
 		</TabPanel>
 		<TabPanel
 			value={tab}

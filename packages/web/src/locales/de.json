@@ -142,5 +142,13 @@
     "translation": "Exportieren",
     "fuzzy": false,
     "keyId": "U2V0dGluZ3MuSWRlbnRpdHkuRXhwb3J0"
+  },
+  "d7b2a145-8868-4f27-a7a5-11ef834f1c50": {
+    "id": "d7b2a145-8868-4f27-a7a5-11ef834f1c50",
+    "isDeleted": false,
+    "lang": "de",
+    "translation": "Einstellungen.Allgemein.Verwenden SieBoardDiscovery",
+    "fuzzy": true,
+    "keyId": "U2V0dGluZ3MuR2VuZXJhbC5Vc2VCb2FyZERpc2NvdmVyeQ=="
   }
 }

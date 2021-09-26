@@ -83,8 +83,8 @@
     "id": "8b905b76-ea1f-4688-895f-9c2c391a4215",
     "isDeleted": false,
     "lang": "nl",
-    "translation": "Menu.Uitloggen",
-    "fuzzy": true,
+    "translation": "Uitloggen",
+    "fuzzy": false,
     "keyId": "TWVudS5Mb2dvdXQ="
   },
   "396c047c-3a98-4719-bb2e-4e8ee4243d3d": {
@@ -142,5 +142,13 @@
     "translation": "IPFS Api Url",
     "fuzzy": false,
     "keyId": "U2V0dGluZ3MuSXBmcy5Vcmw="
+  },
+  "da83561d-43ed-4ee4-9aa8-4a988f8525a7": {
+    "id": "da83561d-43ed-4ee4-9aa8-4a988f8525a7",
+    "isDeleted": false,
+    "lang": "nl",
+    "translation": "Instellingen.Algemeen.UseBoardDiscovery",
+    "fuzzy": true,
+    "keyId": "U2V0dGluZ3MuR2VuZXJhbC5Vc2VCb2FyZERpc2NvdmVyeQ=="
   }
 }
