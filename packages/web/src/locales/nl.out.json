@@ -1,0 +1,19 @@
+{
+  "Menu.Profile": "Profiel",
+  "LoadMore": "Meer laden",
+  "Board": "Bord",
+  "WriteSomething": "Schrijf iets...",
+  "Post": "Na",
+  "Settings": "Instellingen",
+  "Save": "Opslaan",
+  "Menu.Settings": "Menu.Instellingen",
+  "Menu.Logout": "Uitloggen",
+  "Settings.Ipfs": "IPFS",
+  "Settings.Identity": "Instellingen.Identiteit",
+  "Settings.General": "Instellingen.Algemeen",
+  "Settings.Identity.Export": "Instellingen.Identiteit.Export",
+  "Settings.Identity.Import": "Instellingen.Identiteit.Import",
+  "Profile": "Profiel",
+  "Settings.Ipfs.Url": "IPFS Api Url",
+  "Settings.General.UseBoardDiscovery": "Instellingen.Algemeen.UseBoardDiscovery"
+}

@@ -1,0 +1,128 @@
+{
+  "fd7a64be-32ea-4f5c-a25e-6ed65a88d1a4": {
+    "id": "fd7a64be-32ea-4f5c-a25e-6ed65a88d1a4",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Account",
+    "keyId": "TWVudS5BY2NvdW50"
+  },
+  "eef155fa-0be0-4d50-9103-a1794253e7c7": {
+    "id": "eef155fa-0be0-4d50-9103-a1794253e7c7",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Profile",
+    "keyId": "TWVudS5Qcm9maWxl"
+  },
+  "eb0d55b9-41e4-4428-a578-9b88c92ee561": {
+    "id": "eb0d55b9-41e4-4428-a578-9b88c92ee561",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Load More",
+    "keyId": "TG9hZE1vcmU="
+  },
+  "0214990f-0e75-4222-92ee-23493a5431f5": {
+    "id": "0214990f-0e75-4222-92ee-23493a5431f5",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Board",
+    "keyId": "Qm9hcmQ="
+  },
+  "70b45bcc-cc9e-4009-9722-e5fabf5ffda3": {
+    "id": "70b45bcc-cc9e-4009-9722-e5fabf5ffda3",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Post",
+    "keyId": "UG9zdA=="
+  },
+  "099d8d04-e066-47f1-ac99-23d59e7da524": {
+    "id": "099d8d04-e066-47f1-ac99-23d59e7da524",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Write something...",
+    "keyId": "V3JpdGVTb21ldGhpbmc="
+  },
+  "0b22461f-bece-4d5d-8c18-80d2f3672fd7": {
+    "id": "0b22461f-bece-4d5d-8c18-80d2f3672fd7",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Logout",
+    "keyId": "TWVudS5Mb2dvdXQ="
+  },
+  "0c988365-a6f8-4fbd-9af7-c29639901818": {
+    "id": "0c988365-a6f8-4fbd-9af7-c29639901818",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Save",
+    "keyId": "U2F2ZQ=="
+  },
+  "4dc8dc44-4cc4-450a-9210-26c5af07bd2f": {
+    "id": "4dc8dc44-4cc4-450a-9210-26c5af07bd2f",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Settings",
+    "keyId": "U2V0dGluZ3M="
+  },
+  "f8d5afa0-60ae-43af-b9ee-60d2cba70061": {
+    "id": "f8d5afa0-60ae-43af-b9ee-60d2cba70061",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Settings",
+    "keyId": "TWVudS5TZXR0aW5ncw=="
+  },
+  "4c9cca7f-b99d-490d-83c5-3c5c402b6268": {
+    "id": "4c9cca7f-b99d-490d-83c5-3c5c402b6268",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "General",
+    "keyId": "U2V0dGluZ3MuR2VuZXJhbA=="
+  },
+  "ad2bf66b-670a-47aa-a33a-27de0f5e6c53": {
+    "id": "ad2bf66b-670a-47aa-a33a-27de0f5e6c53",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "IPFS",
+    "keyId": "U2V0dGluZ3MuSXBmcw=="
+  },
+  "a94ca7e7-3e87-43cc-b5cc-6b5fcc46c6ab": {
+    "id": "a94ca7e7-3e87-43cc-b5cc-6b5fcc46c6ab",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Identity",
+    "keyId": "U2V0dGluZ3MuSWRlbnRpdHk="
+  },
+  "a47a3742-00a4-4423-aaa1-148f3c02cc98": {
+    "id": "a47a3742-00a4-4423-aaa1-148f3c02cc98",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Profile",
+    "keyId": "UHJvZmlsZQ=="
+  },
+  "520af769-54a2-4543-bd2c-557833145317": {
+    "id": "520af769-54a2-4543-bd2c-557833145317",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Export",
+    "keyId": "U2V0dGluZ3MuSWRlbnRpdHkuRXhwb3J0"
+  },
+  "dd5bd10e-2f75-47c6-bf80-410571744ebf": {
+    "id": "dd5bd10e-2f75-47c6-bf80-410571744ebf",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Import",
+    "keyId": "U2V0dGluZ3MuSWRlbnRpdHkuSW1wb3J0"
+  },
+  "0bc1d74c-d719-497a-9bb7-5c40b2de82d2": {
+    "id": "0bc1d74c-d719-497a-9bb7-5c40b2de82d2",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "IPFS Api Url",
+    "keyId": "U2V0dGluZ3MuSXBmcy5Vcmw="
+  },
+  "ec50c58b-e032-4fb8-9a08-4f43852e1ed0": {
+    "id": "ec50c58b-e032-4fb8-9a08-4f43852e1ed0",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Use board discovery",
+    "keyId": "U2V0dGluZ3MuR2VuZXJhbC5Vc2VCb2FyZERpc2NvdmVyeQ=="
+  }
+}

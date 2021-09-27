@@ -1,0 +1,18 @@
+{
+  "a0221004-048b-40e3-afa3-5c87b809cfa1": {
+    "id": "a0221004-048b-40e3-afa3-5c87b809cfa1",
+    "isDeleted": false,
+    "lang": "it",
+    "translation": "Menu.Profilo",
+    "fuzzy": true,
+    "keyId": "TWVudS5Qcm9maWxl"
+  },
+  "b05322bc-a7ee-4273-9d71-23a7773b448d": {
+    "id": "b05322bc-a7ee-4273-9d71-23a7773b448d",
+    "isDeleted": false,
+    "lang": "it",
+    "translation": "Menu.Account",
+    "fuzzy": true,
+    "keyId": "TWVudS5BY2NvdW50"
+  }
+}

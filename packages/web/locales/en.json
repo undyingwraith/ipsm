@@ -1,0 +1,16 @@
+{
+  "fd7a64be-32ea-4f5c-a25e-6ed65a88d1a4": {
+    "id": "fd7a64be-32ea-4f5c-a25e-6ed65a88d1a4",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Account",
+    "keyId": "TWVudS5BY2NvdW50"
+  },
+  "eef155fa-0be0-4d50-9103-a1794253e7c7": {
+    "id": "eef155fa-0be0-4d50-9103-a1794253e7c7",
+    "isDeleted": false,
+    "lang": "en",
+    "translation": "Profile",
+    "keyId": "TWVudS5Qcm9maWxl"
+  }
+}

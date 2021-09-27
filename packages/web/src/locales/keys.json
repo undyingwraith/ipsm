@@ -1,0 +1,182 @@
+{
+  "TWVudS5Qcm9maWxl": {
+    "id": "TWVudS5Qcm9maWxl",
+    "context": null,
+    "text": "Menu.Profile",
+    "firstUsed": "2021-09-23T22:46:34.321Z",
+    "unusedSince": null,
+    "sources": [
+      "src/components/MenuButton.tsx"
+    ]
+  },
+  "TWVudS5BY2NvdW50": {
+    "id": "TWVudS5BY2NvdW50",
+    "context": null,
+    "text": "Menu.Account",
+    "firstUsed": "2021-09-23T22:46:34.321Z",
+    "unusedSince": "2021-09-25T13:25:12.039Z",
+    "sources": [],
+    "isDeleted": true
+  },
+  "TG9hZE1vcmU=": {
+    "id": "TG9hZE1vcmU=",
+    "context": null,
+    "text": "LoadMore",
+    "firstUsed": "2021-09-23T22:57:08.813Z",
+    "unusedSince": null,
+    "sources": [
+      "src/App.tsx"
+    ]
+  },
+  "Qm9hcmQ=": {
+    "id": "Qm9hcmQ=",
+    "context": null,
+    "text": "Board",
+    "firstUsed": "2021-09-23T22:59:10.147Z",
+    "unusedSince": null,
+    "sources": [
+      "src/components/BoardSelector.tsx"
+    ]
+  },
+  "V3JpdGVTb21ldGhpbmc=": {
+    "id": "V3JpdGVTb21ldGhpbmc=",
+    "context": null,
+    "text": "WriteSomething",
+    "firstUsed": "2021-09-23T23:02:59.104Z",
+    "unusedSince": null,
+    "sources": [
+      "src/App.tsx"
+    ]
+  },
+  "UG9zdA==": {
+    "id": "UG9zdA==",
+    "context": null,
+    "text": "Post",
+    "firstUsed": "2021-09-23T23:03:13.870Z",
+    "unusedSince": null,
+    "sources": [
+      "src/App.tsx"
+    ]
+  },
+  "TWVudS5TZXR0aW5ncw==": {
+    "id": "TWVudS5TZXR0aW5ncw==",
+    "context": null,
+    "text": "Menu.Settings",
+    "firstUsed": "2021-09-25T13:25:12.039Z",
+    "unusedSince": null,
+    "sources": [
+      "src/components/MenuButton.tsx"
+    ]
+  },
+  "TWVudS5Mb2dvdXQ=": {
+    "id": "TWVudS5Mb2dvdXQ=",
+    "context": null,
+    "text": "Menu.Logout",
+    "firstUsed": "2021-09-25T13:25:12.039Z",
+    "unusedSince": null,
+    "sources": [
+      "src/components/MenuButton.tsx"
+    ]
+  },
+  "U2V0dGluZ3M=": {
+    "id": "U2V0dGluZ3M=",
+    "context": null,
+    "text": "Settings",
+    "firstUsed": "2021-09-25T13:25:12.039Z",
+    "unusedSince": null,
+    "sources": [
+      "src/components/dialog/SettingsDialog.tsx"
+    ]
+  },
+  "U2F2ZQ==": {
+    "id": "U2F2ZQ==",
+    "context": null,
+    "text": "Save",
+    "firstUsed": "2021-09-25T13:25:12.039Z",
+    "unusedSince": null,
+    "sources": [
+      "src/components/dialog/ProfileDialog.tsx",
+      "src/components/dialog/SettingsDialog.tsx"
+    ]
+  },
+  "U2V0dGluZ3MuR2VuZXJhbA==": {
+    "id": "U2V0dGluZ3MuR2VuZXJhbA==",
+    "context": null,
+    "text": "Settings.General",
+    "firstUsed": "2021-09-25T13:55:24.205Z",
+    "unusedSince": null,
+    "sources": [
+      "src/components/dialog/SettingsDialog.tsx"
+    ]
+  },
+  "U2V0dGluZ3MuSWRlbnRpdHk=": {
+    "id": "U2V0dGluZ3MuSWRlbnRpdHk=",
+    "context": null,
+    "text": "Settings.Identity",
+    "firstUsed": "2021-09-25T13:55:24.205Z",
+    "unusedSince": null,
+    "sources": [
+      "src/components/dialog/SettingsDialog.tsx"
+    ]
+  },
+  "U2V0dGluZ3MuSXBmcw==": {
+    "id": "U2V0dGluZ3MuSXBmcw==",
+    "context": null,
+    "text": "Settings.Ipfs",
+    "firstUsed": "2021-09-25T13:55:24.205Z",
+    "unusedSince": null,
+    "sources": [
+      "src/components/dialog/SettingsDialog.tsx"
+    ]
+  },
+  "UHJvZmlsZQ==": {
+    "id": "UHJvZmlsZQ==",
+    "context": null,
+    "text": "Profile",
+    "firstUsed": "2021-09-25T20:33:41.432Z",
+    "unusedSince": null,
+    "sources": [
+      "src/components/dialog/ProfileDialog.tsx"
+    ]
+  },
+  "U2V0dGluZ3MuSWRlbnRpdHkuSW1wb3J0": {
+    "id": "U2V0dGluZ3MuSWRlbnRpdHkuSW1wb3J0",
+    "context": null,
+    "text": "Settings.Identity.Import",
+    "firstUsed": "2021-09-25T20:33:41.432Z",
+    "unusedSince": null,
+    "sources": [
+      "src/components/dialog/SettingsDialog.tsx"
+    ]
+  },
+  "U2V0dGluZ3MuSWRlbnRpdHkuRXhwb3J0": {
+    "id": "U2V0dGluZ3MuSWRlbnRpdHkuRXhwb3J0",
+    "context": null,
+    "text": "Settings.Identity.Export",
+    "firstUsed": "2021-09-25T20:33:41.432Z",
+    "unusedSince": null,
+    "sources": [
+      "src/components/dialog/SettingsDialog.tsx"
+    ]
+  },
+  "U2V0dGluZ3MuSXBmcy5Vcmw=": {
+    "id": "U2V0dGluZ3MuSXBmcy5Vcmw=",
+    "context": null,
+    "text": "Settings.Ipfs.Url",
+    "firstUsed": "2021-09-25T20:33:41.432Z",
+    "unusedSince": null,
+    "sources": [
+      "src/components/dialog/SettingsDialog.tsx"
+    ]
+  },
+  "U2V0dGluZ3MuR2VuZXJhbC5Vc2VCb2FyZERpc2NvdmVyeQ==": {
+    "id": "U2V0dGluZ3MuR2VuZXJhbC5Vc2VCb2FyZERpc2NvdmVyeQ==",
+    "context": null,
+    "text": "Settings.General.UseBoardDiscovery",
+    "firstUsed": "2021-09-26T11:19:48.469Z",
+    "unusedSince": null,
+    "sources": [
+      "src/components/dialog/SettingsDialog.tsx"
+    ]
+  }
+}

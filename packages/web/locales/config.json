@@ -1,0 +1,25 @@
+{
+  "srcPaths": [
+    "src"
+  ],
+  "srcExtensions": [
+    ".ts",
+    ".tsx"
+  ],
+  "langs": [
+    "en",
+    "de",
+    "it",
+    "nl"
+  ],
+  "originalLang": "en",
+  "msgFunctionNames": [
+    "_t"
+  ],
+  "msgRegexps": [],
+  "fMinify": false,
+  "fJsOutput": false,
+  "fJsonOutput": true,
+  "fReactIntlOutput": false,
+  "dbVersion": 2
+}

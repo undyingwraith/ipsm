@@ -1,0 +1,18 @@
+{
+  "5a402a03-618e-42de-8227-78dee4fc9387": {
+    "id": "5a402a03-618e-42de-8227-78dee4fc9387",
+    "isDeleted": false,
+    "lang": "de",
+    "translation": "Menü.Profil",
+    "fuzzy": true,
+    "keyId": "TWVudS5Qcm9maWxl"
+  },
+  "c91255e5-5b6e-4601-b231-3a00a0519e71": {
+    "id": "c91255e5-5b6e-4601-b231-3a00a0519e71",
+    "isDeleted": false,
+    "lang": "de",
+    "translation": "Menü.Konto",
+    "fuzzy": true,
+    "keyId": "TWVudS5BY2NvdW50"
+  }
+}

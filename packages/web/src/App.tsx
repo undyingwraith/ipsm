@@ -1,23 +1,12 @@
-import {
-	AppBar,
-	Autocomplete,
-	Avatar,
-	Box,
-	Button,
-	CircularProgress,
-	Container,
-	Grid,
-	IconButton,
-	Menu,
-	MenuItem,
-	Paper,
-	TextField,
-	Toolbar,
-	Typography,
-} from '@mui/material';
+import {AppBar, Box, Button, CircularProgress, Container, Grid, Paper, TextField, Toolbar} from '@mui/material';
 import {green} from '@mui/material/colors';
 import {IPost} from '@undyingwraith/ipsm-core';
 import React, {useEffect, useState} from 'react';
+import {useTranslation} from 'react-i18next';
+import {BoardSelector} from './components/BoardSelector';
+import {ProfileDialog} from './components/dialog/ProfileDialog';
+import {SettingsDialog} from './components/dialog/SettingsDialog';
+import {MenuButton} from './components/MenuButton';
 import {Post} from './components/Post';
 import {useBoards} from './hooks/useBoards';
 import {useIpsm} from './hooks/useIpsm';
@@ -27,10 +16,12 @@ function App() {
 	const [board, setBoard] = useState<string | null>(null);
 	const [posts, setPosts] = useState<IPost[]>([]);
 	const [loading, setLoading] = useState(false);
+	const [dialog, setDialog] = useState<'profile' | 'settings'>();
+	const [_t] = useTranslation();
 	const ipsm = useIpsm();
 
 	const post = (post: IPost): Promise<void> => {
-		return board && ipsm ? ipsm.postToBoard(board, post) : Promise.reject('ipsm no ready');
+		return board && ipsm ? ipsm.postToBoard(board, post) : Promise.reject('ipsm not ready');
 	};
 
 	const postMessage = () => {
@@ -55,7 +46,7 @@ function App() {
 		if (ipsm) {
 			void ipsm.subscribeToBoardFeed(board => {
 				addBoard(board);
-				void ipsm.postSync(board)
+				void ipsm.postSync(board);
 			});
 
 			return () => {
@@ -78,16 +69,6 @@ function App() {
 		}
 	}, [board, ipsm]);
 
-	const [anchorEl, setAnchorEl] = React.useState(null);
-
-	const handleMenu = (event: any) => {
-		setAnchorEl(event.currentTarget);
-	};
-
-	const handleClose = () => {
-		setAnchorEl(null);
-	};
-
 	const loadMore = () => {
 		if (board && ipsm) {
 			setLoading(true);
@@ -103,71 +84,36 @@ function App() {
 		<Container>
 			<AppBar color={'secondary'}>
 				<Toolbar>
-					<Autocomplete
-						freeSolo
-						disablePortal
-						options={boards}
-						size={'small'}
-						sx={{width: 300}}
-						value={board}
-						onChange={(e, v) => {
+					<BoardSelector
+						boards={boards}
+						board={board}
+						onChange={(v) => {
 							setBoard(v);
 							if (v && ipsm) {
 								ipsm.getPosts(v).then(setPosts).catch(console.error);
-								void ipsm.announce(v)
+								void ipsm.announce(v);
 							} else {
 								setPosts([]);
 							}
 						}}
-						renderInput={(params) => <TextField {...params} label="Board"/>}
 					/>
-					<Typography
-						sx={{ flexGrow: 1, marginLeft: 3 }}
-						variant="h6"
-						component="div"
-					>{board ?? <i>none</i>}</Typography>
-					<div>
-						<IconButton
-							size="large"
-							aria-label="account of current user"
-							aria-controls="menu-appbar"
-							aria-haspopup="true"
-							onClick={handleMenu}
-							color="inherit"
-						>
-							<Avatar>You</Avatar>
-						</IconButton>
-						<Menu
-							id="menu-appbar"
-							anchorEl={anchorEl}
-							anchorOrigin={{
-								vertical: 'top',
-								horizontal: 'right',
-							}}
-							keepMounted
-							transformOrigin={{
-								vertical: 'top',
-								horizontal: 'right',
-							}}
-							open={Boolean(anchorEl)}
-							onClose={handleClose}
-						>
-							<MenuItem onClick={handleClose}>Profile</MenuItem>
-							<MenuItem onClick={handleClose}>My account</MenuItem>
-						</Menu>
-					</div>
+					<div style={{flexGrow: 1}}/>
+					<MenuButton
+						onProfileClick={() => setDialog('profile')}
+						onSettingsClick={() => setDialog('settings')}
+					/>
 				</Toolbar>
 			</AppBar>
 			<main style={{marginTop: 75}}>
 				{board != null && <Paper style={{marginBottom: 15, padding: 10}}>
 					{/*<PostForm onSubmit={post}/>*/}
                     <TextField
-                        label={'Write something...'}
+                        label={_t('WriteSomething')}
                         size={'small'}
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                     />
-                    <Button onClick={postMessage}>Post</Button>
+                    <Button onClick={postMessage}>{_t('Post')}</Button>
                 </Paper>}
 				<Grid container spacing={3}>
 					{posts.map((p, i) => <Grid item key={i} xs={12}><Post data={p}/></Grid>)}
@@ -179,7 +125,7 @@ function App() {
 							margin: '0 auto',
 							display: 'block',
 						}}
-					>Load more</Button>
+					>{_t('LoadMore')}</Button>
 					{loading && (
 						<CircularProgress
 							size={24}
@@ -195,6 +141,14 @@ function App() {
 					)}
 				</Box>
 			</main>
+			<ProfileDialog
+				open={dialog === 'profile'}
+				onClose={() => setDialog(undefined)}
+			/>
+			<SettingsDialog
+				open={dialog === 'settings'}
+				onClose={() => setDialog(undefined)}
+			/>
 		</Container>
 	);
 }

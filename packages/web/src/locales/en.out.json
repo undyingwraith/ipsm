@@ -1,0 +1,19 @@
+{
+  "Menu.Profile": "Profile",
+  "LoadMore": "Load More",
+  "Board": "Board",
+  "Post": "Post",
+  "WriteSomething": "Write something...",
+  "Menu.Logout": "Logout",
+  "Save": "Save",
+  "Settings": "Settings",
+  "Menu.Settings": "Settings",
+  "Settings.General": "General",
+  "Settings.Ipfs": "IPFS",
+  "Settings.Identity": "Identity",
+  "Profile": "Profile",
+  "Settings.Identity.Export": "Export",
+  "Settings.Identity.Import": "Import",
+  "Settings.Ipfs.Url": "IPFS Api Url",
+  "Settings.General.UseBoardDiscovery": "Use board discovery"
+}
