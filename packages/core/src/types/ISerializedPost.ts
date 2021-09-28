@@ -1,20 +1,16 @@
-import {ISerializedPostContent} from './ISerializedPostContent';
+import {CID} from 'ipfs-http-client';
 
 export interface ISerializedPost {
 	/**
 	 * Identity of poster (public key)
 	 */
-	from: string;
+	from: CID;
+	/**
+	 * Data of the post
+	 */
+	data: CID;
 	/**
 	 * Signature of the content as a hex string
 	 */
-	sig: string;
-	/**
-	 * Content of the post
-	 */
-	content: ISerializedPostContent[];
-	/**
-	 * Timestamp of post
-	 */
-	ts: number;
+	sigs: CID;
 }
