@@ -2,10 +2,10 @@ import fs from 'fs';
 import {create} from 'ipfs-http-client';
 import cron from 'node-cron';
 import NodeRSA from 'node-rsa';
-import {IpsmRelayApp} from './IpsmRelayApp';
+import {IpsmClientApp} from '@undyingwraith/ipsm-client';
 
 const ipfs = create();
-const ipsm = new IpsmRelayApp(ipfs, new NodeRSA({b: 512}));
+const ipsm = new IpsmClientApp(ipfs, new NodeRSA({b: 512}));
 
 const CONFIG_FILE = './relay.config.json'
 

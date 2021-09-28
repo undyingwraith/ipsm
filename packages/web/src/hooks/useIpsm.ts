@@ -1,7 +1,7 @@
 import {create} from 'ipfs-http-client';
 import NodeRSA from 'node-rsa';
 import {useMemo} from 'react';
-import {IpsmWebApp} from '../IpsmWebApp';
+import {IpsmClientApp} from '@undyingwraith/ipsm-client';
 
 export const useIpsm = () => {
 	const ipfs = useMemo(() => {
@@ -25,7 +25,7 @@ export const useIpsm = () => {
 
 	return useMemo(() => {
 		if (ipfs && identity) {
-		  return new IpsmWebApp(ipfs, identity)
+		  return new IpsmClientApp(ipfs, identity)
 		}
 	}, [ipfs, identity]);
 };
