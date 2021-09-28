@@ -16,6 +16,7 @@
     "@emotion/styled": "^11.3.0",
     "@mui/icons-material": "^5.0.1",
     "@mui/material": "^5.0.0",
+    "@undyingwraith/ipsm-client": "^0.1.0",
     "@undyingwraith/ipsm-core": "^0.1.5",
     "crypto-hash": "^1.3.0",
     "denque": "^2.0.1",

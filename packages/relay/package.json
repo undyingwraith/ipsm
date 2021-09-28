@@ -16,9 +16,7 @@
     "typescript": "^4.4.3"
   },
   "dependencies": {
-    "@undyingwraith/ipsm-core": "^0.1.5",
-    "crypto-hash": "^1.3.0",
-    "denque": "^2.0.1",
+    "@undyingwraith/ipsm-client": "^0.1.0",
     "ipfs-http-client": "^52.0.5",
     "node-cron": "^3.0.0",
     "node-rsa": "^1.1.1"
