@@ -13,8 +13,4 @@ export interface IPost {
 	 * Timestamp of post
 	 */
 	ts?: number
-	/**
-	 * Signature of the post
-	 */
-	sig?: string
 }

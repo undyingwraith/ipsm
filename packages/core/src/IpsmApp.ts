@@ -74,4 +74,8 @@ export class IpsmApp implements IIpsmApp {
 	announce(board: string): Promise<void> {
 		return this.ipfs.pubsub.publish(this.topics.getBoardDiscovery(), new TextEncoder().encode(board));
 	}
+
+	isLoggedIn() {
+		return !this.identity.isEmpty() && this.identity.isPrivate();
+	}
 }
