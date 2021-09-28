@@ -4,17 +4,17 @@ export interface IPost {
 	/**
 	 * Identity of poster (public key)
 	 */
-	from?:  string
+	from?: string;
 	/**
 	 * Content of the post
 	 */
-	content: IPostContent[]
+	content: IPostContent[];
 	/**
 	 * Timestamp of post
 	 */
-	ts?: number
+	ts?: number;
 	/**
-	 * Signature of the post
+	 * Title of the post
 	 */
-	sig?: string
+	title?: string;
 }

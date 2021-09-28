@@ -1,60 +1,61 @@
-import {IPFSHTTPClient} from 'ipfs-http-client';
+import {CID, IPFSHTTPClient} from 'ipfs-http-client';
 import NodeRSA from 'node-rsa';
-import {IPost, IPostContent, ISerializedPost, ISerializedPostContent} from '../../types';
-import {MimeHandlerRegistry} from '../mime';
+import {IPost, ISerializedPost} from '../../types';
+import {DefaultSignatureVerifier, ISignatureVerifier} from '../SignatureVerifier';
 import {IPostManager} from './IPostManager';
 
 export class PostManager implements IPostManager {
-	private handler: MimeHandlerRegistry;
 
-	constructor(private ipfs: IPFSHTTPClient, private key: NodeRSA) {
-		this.handler = MimeHandlerRegistry.build();
+	constructor(
+		private ipfs: IPFSHTTPClient,
+		private key: NodeRSA,
+		private verifier: ISignatureVerifier = new DefaultSignatureVerifier(ipfs),
+	) {
 	}
 
 	/**
 	 * @inheritDoc
 	 */
 	public serialize(post: IPost): Promise<ISerializedPost> {
-		return new Promise((resolve, reject) => {
-			Promise.all(post.content.map(c => this.handler.write(c.data, c.mime).then(d => this.ipfs.add(d)).then(r => ({
-				...c,
-				data: r.cid.toString(),
-			} as ISerializedPostContent))))
-				.then(content => {
-					const ts = Date.now();
-					const unsignedPost = {
-						...post,
-						from: this.key.exportKey('public'),
-						content,
-						ts,
-					};
-					return {
-						...unsignedPost,
-						sig: this.key.sign(ts + JSON.stringify(unsignedPost.content)).toString('base64'),
-					} as ISerializedPost;
-				})
-				.then(resolve)
-				.catch(reject);
-		});
+		let key: CID;
+		let postCid: CID;
+		return this.ipfs.dag.put(this.key.exportKey('pkcs8-public-der'), { format: 'dag-cbor', hashAlg: 'sha2-256' })
+			.then(k => {
+				key = k;
+
+				const ts = Date.now();
+
+				return this.ipfs.dag.put({
+					...post,
+					from: key,
+					ts,
+				}, { format: 'dag-cbor', hashAlg: 'sha2-256' });
+			})
+			.then(post => {
+				postCid = post;
+
+				return this.ipfs.dag.put({
+					[key.toString()]: this.key.sign(post).toString('base64'),
+				});
+			})
+			.then(sigs => {
+				return {
+					from: key,
+					data: postCid,
+					sigs: sigs,
+				} as ISerializedPost;
+			});
 	}
 
 	/**
 	 * @inheritDoc
 	 */
 	public deserialize(post: ISerializedPost): Promise<IPost> {
-		return new Promise((resolve, reject) => {
-			const key = new NodeRSA();
-			key.importKey(post.from, 'public');
-			if (key.verify(post.ts + JSON.stringify(post.content), Buffer.from(post.sig, 'base64'))) {
-				resolve({
-					from: post.from,
-					content: post.content as IPostContent[],
-					ts: post.ts,
-					sig: post.sig,
-				} as IPost);
-			} else {
-				reject('Invalid signature');
-			}
-		});
+		return this.ipfs.dag.get(post.sigs)
+			.then(sigs => this.verifier.verify(post.data, post.from, sigs.value))
+			.then(valid => valid
+				? this.ipfs.dag.get(post.data).then(res => res.value)
+				: Promise.reject('signature not verified'),
+			);
 	}
 }
