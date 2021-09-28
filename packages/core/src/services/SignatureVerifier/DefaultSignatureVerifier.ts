@@ -12,14 +12,14 @@ export class DefaultSignatureVerifier implements ISignatureVerifier {
 		if (!sigs.hasOwnProperty(from.toString()))
 			return Promise.resolve(false);
 
-		return this.validateSignature(from, post, sigs[from.toString()])
+		return this.validateSignature(from, post, sigs[from.toString()]);
 	}
 
 	validateSignature(key: CID, post: CID, sig: string) {
 		return this.ipfs.dag.get(key)
 			.then(r => {
 				const key = new NodeRSA();
-				key.importKey(r.value, 'pkcs8-public-der');
+				key.importKey(Buffer.from(r.value), 'pkcs8-public-der');
 
 				return key.verify(post, Buffer.from(sig, 'base64'));
 			});
