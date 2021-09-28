@@ -4,6 +4,8 @@
   - packages/web/**/*
 "component:relay":
   - packages/relay/**/*
+"component:client":
+  - packages/client/**/*
 documentation:
   - docs/**/*
   - README.md
