@@ -19,7 +19,7 @@ export class PostManager implements IPostManager {
 	public serialize(post: IPost): Promise<ISerializedPost> {
 		let key: CID;
 		let postCid: CID;
-		return this.ipfs.dag.put(this.key.exportKey('pkcs8-public-der'))
+		return this.ipfs.dag.put(this.key.exportKey('pkcs8-public-der'), { format: 'dag-cbor', hashAlg: 'sha2-256' })
 			.then(k => {
 				key = k;
 
@@ -29,7 +29,7 @@ export class PostManager implements IPostManager {
 					...post,
 					from: key,
 					ts,
-				});
+				}, { format: 'dag-cbor', hashAlg: 'sha2-256' });
 			})
 			.then(post => {
 				postCid = post;
@@ -51,13 +51,7 @@ export class PostManager implements IPostManager {
 	 * @inheritDoc
 	 */
 	public deserialize(post: ISerializedPost): Promise<IPost> {
-		const key = new NodeRSA();
-		return this.ipfs.dag.get(post.from)
-			.then(k => {
-				key.importKey(k.value, 'pkcs8-public-der');
-
-				return this.ipfs.dag.get(post.sigs);
-			})
+		return this.ipfs.dag.get(post.sigs)
 			.then(sigs => this.verifier.verify(post.data, post.from, sigs.value))
 			.then(valid => valid
 				? this.ipfs.dag.get(post.data).then(res => res.value)

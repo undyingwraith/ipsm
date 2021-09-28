@@ -8,7 +8,8 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
-    "clean": "rm -r ./dist"
+    "clean": "rm -r ./dist",
+    "test": "tsc && jest"
   },
   "dependencies": {
     "ipfs-http-client": "^52.0.5",
