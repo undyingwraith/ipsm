@@ -1,15 +1,16 @@
 {
   "name": "root",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "install": "lerna bootstrap",
-    "build": "lerna run build",
-    "web": "concurrently \"lerna run watch\" \"cd packages/web && yarn start\"",
-    "relay": "concurrently \"lerna run watch\" \"cd packages/relay && yarn start\""
+    "build": "yarn workspaces foreach build",
+    "web": "concurrently --kill-others \"yarn workspaces foreach run watch\" \"cd packages/web && yarn start\"",
+    "relay": "concurrently --kill-others \"yarn workspaces foreach run watch\" \"cd packages/relay && yarn start\""
   },
   "devDependencies": {
-    "concurrently": "^6.2.1",
-    "lerna": "^4.0.0",
-    "typescript": "^4.4.3"
-  }
+    "concurrently": "^7.5.0"
+  },
+  "packageManager": "yarn@3.2.4"
 }

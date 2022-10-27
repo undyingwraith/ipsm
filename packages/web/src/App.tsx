@@ -1,6 +1,6 @@
 import {AppBar, Box, Button, CircularProgress, Container, Grid, Paper, TextField, Toolbar} from '@mui/material';
 import {green} from '@mui/material/colors';
-import {IPost} from '@undyingwraith/ipsm-core';
+import {IPost} from '@undyingwraith/ipsm-client';
 import React, {useEffect, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {BoardSelector} from './components/BoardSelector';
@@ -16,25 +16,25 @@ function App() {
 	const [board, setBoard] = useState<string | null>(null);
 	const [posts, setPosts] = useState<IPost[]>([]);
 	const [loading, setLoading] = useState(false);
+	const [posting, setPosting] = useState(false);
 	const [dialog, setDialog] = useState<'profile' | 'settings'>();
 	const [_t] = useTranslation();
 	const ipsm = useIpsm();
 
-	const post = (post: IPost): Promise<void> => {
-		return board && ipsm ? ipsm.postToBoard(board, post) : Promise.reject('ipsm not ready');
-	};
-
 	const postMessage = () => {
-		if (ipsm) {
-			post({
-				content: [
-					{
-						mime: 'text/plain',
-						data: message,
-					},
-				],
-			})
+		if (ipsm && board) {
+			setPosting(true);
+			ipsm.getIpfs().dag.put(new TextEncoder().encode(message))
+				.then(r => ipsm.postToBoard(board, {
+					content: [
+						{
+							mime: 'text/plain',
+							data: r,
+						},
+					],
+				}))
 				.finally(() => {
+					setPosting(false);
 					setMessage('');
 				});
 		}
@@ -112,8 +112,9 @@ function App() {
                         size={'small'}
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
+                        disabled={posting}
                     />
-                    <Button onClick={postMessage}>{_t('Post')}</Button>
+                    <Button onClick={postMessage} disabled={posting}>{_t('Post')}</Button>
                 </Paper>}
 				<Grid container spacing={3}>
 					{posts.map((p, i) => <Grid item key={i} xs={12}><Post data={p}/></Grid>)}

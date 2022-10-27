@@ -1,6 +1,5 @@
 import {LinearProgress} from '@mui/material';
-import {IPostContent} from '@undyingwraith/ipsm-core';
-import {CID} from 'ipfs-http-client';
+import {IPostContent} from '@undyingwraith/ipsm-client';
 import {useAsyncMemo} from 'use-async-memo';
 import {useIpsm} from '../hooks/useIpsm';
 
@@ -14,17 +13,16 @@ export const PostContent = (props: PostContentProps) => {
 
 
 	const content = useAsyncMemo(async () => {
-		const cid = CID.parse(data.data);
 		switch (data.mime) {
 			case 'text/html':
-				return <div dangerouslySetInnerHTML={{__html: await ipsm?.readFile(cid) ?? ''}}/>;
+				return <div dangerouslySetInnerHTML={{__html: await ipsm?.readFile(data.data) ?? ''}}/>;
 			case 'text/plain':
 			case 'text/markdown':
-				return <p>{await ipsm?.readFile(cid)}</p>;
+				return <p>{await ipsm?.readFile(data.data)}</p>;
 			case 'image/jpg':
 			case 'image/png':
 			case 'image/webp':
-				return <img src={`https://ipfs.io/ipfs/${cid.toString()}`} alt={cid.toString()}/>;
+				return <img src={`https://ipfs.io/ipfs/${data.data.toString()}`} alt={data.data.toString()}/>;
 			default:
 				return <p><i>Encountered unknown mime type</i>: {data.mime}</p>;
 		}

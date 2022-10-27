@@ -1,4 +1,4 @@
-import {IPost, IPostContent} from '@undyingwraith/ipsm-core';
+import {IPost} from '@undyingwraith/ipsm-client';
 import {useState} from 'react';
 import {ContentForm} from './ContentForm';
 
@@ -8,7 +8,7 @@ export interface PostFormProps {
 
 export const PostForm = (props: PostFormProps) => {
 	const [loading, setLoading] = useState(false);
-	const [content, setContent] = useState<IPostContent[]>([]);
+	const [content, setContent] = useState<any[]>([]);
 
 	const addContent = () => {
 		setContent(c => [...c, {

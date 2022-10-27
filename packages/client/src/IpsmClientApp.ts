@@ -1,20 +1,33 @@
-import {IPost, IPostManager, IpsmApp, PostManager} from '@undyingwraith/ipsm-core';
+import {IPost, IpsmApp, PostManager} from '@undyingwraith/ipsm-core';
 import {CID, IPFSHTTPClient} from 'ipfs-http-client';
 import * as NodeRSA from 'node-rsa';
-import {concat} from 'uint8arrays';
-import {BoardStorageService} from './BoardStorageService';
-import {SyncService} from './SyncService';
+import {IIpsmClientApp} from './IIpsmClientApp';
+import {IStorageService, IValueStore, StorageService, SyncService} from './service';
+import {IFilterService} from './service/FilterService/IFilterService';
 
-export class IpsmClientApp extends IpsmApp {
-	private readonly board: BoardStorageService;
+class DefaultFilterService implements IFilterService {
+	validatePost(post: CID, sigs: CID): Promise<boolean> {
+		return Promise.resolve(false);
+	}
+}
+
+export class IpsmClientApp extends IpsmApp implements IIpsmClientApp {
+	private readonly storage: IStorageService;
 	private readonly ipfsNode: IPFSHTTPClient;
 	private sync: SyncService;
 
-	constructor(ipfs: IPFSHTTPClient, identity: NodeRSA, manager: IPostManager = new PostManager(ipfs, identity)) {
+	/**
+	 *
+	 * @param ipfs
+	 * @param identity
+	 * @param storage
+	 * @param filter
+	 */
+	constructor(ipfs: IPFSHTTPClient, identity: NodeRSA, storage: IValueStore, filter: IFilterService = new DefaultFilterService()) {
 		super(ipfs, identity);
 		this.ipfsNode = ipfs;
-		this.board = new BoardStorageService(ipfs);
-		this.sync = new SyncService(ipfs, this.board, manager);
+		this.storage = new StorageService(ipfs, storage);
+		this.sync = new SyncService(ipfs, this.storage, new PostManager(ipfs, identity), filter);
 	}
 
 	/**
@@ -42,20 +55,18 @@ export class IpsmClientApp extends IpsmApp {
 	}
 
 	getPosts(board: string, skip = 0, take = 12) {
-		return this.board.getPosts(board, skip, take);
+		return this.storage.getPosts(board, skip, take).catch(() => ([]));
 	}
 
 	addPost(board: string, post: IPost): Promise<void> {
-		return this.board.addPost(board, post);
+		return this.storage.addPost(board, post);
 	}
 
 	async readFile(cid: CID): Promise<string> {
-		const chunks = [];
+		return this.ipfsNode.dag.get(cid).then(r => new TextDecoder().decode(r.value))
+	}
 
-		for await (const chunk of this.ipfsNode.cat(cid)) {
-			chunks.push(chunk);
-		}
-
-		return new TextDecoder().decode(concat(chunks));
-	};
+	getIpfs(): IPFSHTTPClient {
+		return this.ipfsNode;
+	}
 }
